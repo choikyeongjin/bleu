@@ -60,6 +60,36 @@
   .diff-down { color: #2f5fd6; font-weight: 700; }
   table.data td.diff-cell { font-size: 11.5px; }
   .foot-note { font-size: 11.5px; color: var(--sub); margin: 4px 0 0; }
+  a { color: var(--accent); }
+  .chips { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 0 0 6px; }
+  .chip { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; }
+  .chip .k { font-size: 11px; color: var(--sub); font-weight: 700; }
+  .chip .v { font-size: 18px; font-weight: 700; margin-top: 2px; }
+  .chip .d { font-size: 11.5px; margin-top: 1px; }
+  .sp { border: 1px solid var(--line); border-radius: 10px; background: var(--card); margin: 0 0 12px; overflow: hidden; }
+  .sp-head { padding: 9px 14px 2px; font-size: 14px; font-weight: 700; }
+  .sp-no { display: inline-block; background: var(--ink); color: #fff; font-size: 11px; padding: 1px 8px; border-radius: 6px; margin-right: 4px; }
+  .sp-head .per { font-size: 11.5px; color: var(--sub); font-weight: 400; margin-left: 4px; }
+  .sp-goal { padding: 0 14px 8px; font-size: 12px; color: var(--sub); }
+  .st { display: inline-block; font-size: 11px; font-weight: 700; padding: 1px 8px; border-radius: 999px; background: var(--good-soft); color: var(--good); }
+  .st.done { background: var(--accent-soft); color: var(--accent); }
+  table.split { width: 100%; table-layout: fixed; border-collapse: collapse; font-size: 12.5px; border-top: 1px solid var(--line); }
+  table.split th { text-align: left; padding: 6px 14px; font-size: 11.5px; }
+  table.split th.l { background: var(--accent-soft); color: var(--accent); width: 50%; }
+  table.split th.r { background: var(--good-soft); color: var(--good); width: 50%; }
+  table.split td { vertical-align: top; padding: 8px 14px 10px; width: 50%; }
+  table.split td.l { border-right: 1px solid var(--line); }
+  table.split ul { margin: 0; padding-left: 16px; }
+  table.split li { margin-bottom: 4px; word-break: keep-all; }
+  .lk { padding: 5px 14px 8px; font-size: 11.5px; color: var(--sub); border-top: 1px solid var(--line); }
+  @media (max-width: 640px) {
+    .chips { grid-template-columns: repeat(2, 1fr); }
+    table.split thead { display: none; }
+    table.split, table.split tbody, table.split tr, table.split td { display: block; width: 100%; }
+    table.split td.l::before { content: "지난주 성과"; display: block; font-weight: 700; color: var(--accent); font-size: 11.5px; margin-bottom: 3px; }
+    table.split td.r::before { content: "금주 계획"; display: block; font-weight: 700; color: var(--good); font-size: 11.5px; margin-bottom: 3px; }
+    table.split td.l { border-right: none; border-bottom: 1px solid var(--line); }
+  }
 </style>
 </head>
 <body>
@@ -77,6 +107,14 @@
       <tr><th>담당 업무</th><td>안심클라우드 / 휴대폰 분실 피해 방지(폰지킴) / 서비스운영</td></tr>
     </tbody>
   </table>
+
+
+  <div class="chips">
+    <div class="chip"><div class="k">DAU 일평균 (총 사용자)</div><div class="v">15,564</div><div class="d"><span class="diff-up">▲ 8.7%</span> 전주 14,315</div></div>
+    <div class="chip"><div class="k">10월 MAU 달성률</div><div class="v">69.5%</div><div class="d">417,291 / 목표 600,000</div></div>
+    <div class="chip"><div class="k">유료 누적 (11.05)</div><div class="v">37,918</div><div class="d">LGU+ 23,709 · SKT 14,209</div></div>
+    <div class="chip"><div class="k">주간 유료가입</div><div class="v">15,830</div><div class="d"><span class="diff-up">▲ 1.1%</span> 전주 15,651</div></div>
+  </div>
 
   <!-- 1 -->
   <h2 class="section-title">1. 안심클라우드 핵심 지표</h2>
@@ -126,7 +164,7 @@
     </tbody>
   </table>
   </div>
-  <p class="foot-note">*총 사용자 합계는 일별 합산(중복 포함), †활성 사용자 합계는 기간 중복 제거 값(일별 합 107,593), ‡세션 합계는 GA 기간 조회값(일별 합 111,249)입니다. 총 사용자 = 이벤트가 한 번이라도 기록된 사용자, 활성 사용자 = 참여(상호작용)가 있었던 사용자입니다.</p>
+  <p class="foot-note">*총 사용자 합계는 일별 합산(중복 포함), †활성 사용자 합계는 기간 중복 제거 값(일별 합 107,593), ‡세션 합계는 GA 기간 조회값(일별 합 111,249)입니다. 총 사용자 = 앱을 한 번이라도 실행한 사용자, 활성 사용자 = 참여(상호작용)가 있었던 사용자입니다.</p>
   <h3 class="sub-title">방문 페이지(첫 진입) vs 페이지 및 경로(전체 화면 방문)</h3>
   <div class="period-note">전주 10.23(금)~10.29(목) vs 금주 10.30(금)~11.05(목) · 양주 모두 7일(주말 포함)</div>
   <div class="scroll">
@@ -201,15 +239,12 @@
   </div>
 
   <hr class="divider">
-  <!-- 3 -->
-  <h2 class="section-title">3. 성과 업무 진행 요약</h2>
 
-  <h3 class="sub-title" style="margin-top:0;">이번주 업무 시간 배분</h3>
+  <!-- 3 -->
+  <h2 class="section-title">3. 업무 시간 배분</h2>
   <div class="period-note">10.30(금) ~ 11.05(목) · 근무 4일(32시간) + 연차 1일(11.03)</div>
   <table class="data">
-    <thead>
-      <tr><th>구분</th><th class="center">시간</th><th class="center">비중</th></tr>
-    </thead>
+    <thead><tr><th>구분</th><th class="center">시간</th><th class="center">비중</th></tr></thead>
     <tbody>
       <tr><td>서비스 개선 (스프린트)</td><td class="center">26시간</td><td class="center">65.0%</td></tr>
       <tr><td>서비스 구축 (프로젝트)</td><td class="center">0시간</td><td class="center">0%</td></tr>
@@ -218,197 +253,94 @@
       <tr><td>합계</td><td class="center">40시간</td><td class="center">100%</td></tr>
     </tbody>
   </table>
-
-  <h3 class="sub-title">스프린트별 한눈에 보기</h3>
-  <div class="scroll">
-  <table class="data wide">
-    <colgroup><col style="width:190px"><col style="width:90px"><col><col></colgroup>
-    <thead><tr><th>스프린트</th><th class="center">진행률·상태</th><th>지난주 성과 (10.30~11.05)</th><th>금주 계획 (11.06~)</th></tr></thead>
-    <tbody>
-      <tr><td>SP1 오피스도우미 연계 강화 10월 배포</td><td class="center">배포 완료 100%</td><td>상용 배포(11.03)·상용 QA(11.04) 완료</td><td>유입 DAU 측정·결과 보고 (배포+5일)</td></tr>
-      <tr><td>SP2 오피스도우미 연계 강화 12월 배포</td><td class="center">진행 50%</td><td>완료 항목 없음 (50% 유지)</td><td>12월 버전 TC(~11.06), 자동저장 약관 검토(~11.12)</td></tr>
-      <tr><td>SP3 폴라리스 스마트 스캐너 대응</td><td class="center">진행중</td><td>시나리오 개발자 리뷰 반영, 폴라리스 의견 회신 완료</td><td>연계 상세 시나리오 작성 (~11.13)</td></tr>
-      <tr><td>SP4 안심클라우드 쿠폰 연동</td><td class="center">QA 완료</td><td>쿠폰 QA 완료 (11.05)</td><td>통신사 배포 일정 협의 후 배포 (~11.18)</td></tr>
-      <tr><td>SP5 특약 보험(DB손해보험)</td><td class="center">진행중</td><td>진행 사항 없음</td><td>적용 시점·약관 반영 검토</td></tr>
-      <tr><td>SP6 공동 프로모션</td><td class="center">진행중</td><td>2가지 안 시나리오 전달, 이벤트 구좌 수정·전달 완료</td><td>공동 프로모션 기획 (~11.13)</td></tr>
-      <tr><td>SP7 LGU+ 제3자 제공 동의 약관</td><td class="center">4/5 단계 (80%)</td><td>항목 수정·전달, PASS 확인, 재동의 공지 등록 완료</td><td>약관 수정 반영 (11.18 오전)</td></tr>
-      <tr><td>SP8 미인지·미사용 유료 고객 활성화</td><td class="center">3/4 단계 (75%)</td><td>기획·전략 리뷰·피드백 반영 완료</td><td>전략 기획서 업데이트·화면 기획서 (~11.13)</td></tr>
-      <tr><td>서비스 운영 — 안심클라우드</td><td class="center">운영</td><td>10월 가입자 전달·웹하드 정산·Drive Picker TC 완료</td><td>SKT PASS 이동 버튼 추가, 광고 메시지 점검 회신 (~11.10)</td></tr>
-    </tbody>
-  </table>
-  </div>
   <hr class="divider">
 
-
-  <h2 class="section-title">4. SP1 — 오피스도우미 연계 강화 10월 배포</h2>
-  <table class="props">
-    <tbody>
-      <tr><th>상태 · 기간</th><td><span class="status-pill done">배포 완료 (100%)</span> &nbsp;07.28 ~ 11.03</td></tr>
-      <tr><th>스프린트 목표</th><td>안심클라우드 유입 DAU 개선: 오피스도우미 뷰어 종료 저장 팝업 + 클라우드 저장 아이콘 배포 (7월 분기 팝업으로 오피스도우미 DAU 4만 → 19,080 감소, 분기 팝업 없이 유입 유지)</td></tr>
-      <tr><th>KR</th><td>오피스도우미 → 안심클라우드 유입 DAU 일평균 3,000 → 19,000 (뷰어 종료 저장 팝업 10,000 + 클라우드 저장 아이콘 9,000)</td></tr>
-      <tr><th>지난주 성과<br>(10.30~11.05)</th><td><ul class="plain" style="margin:0;"><li>10월 배포 상용 반영 — 11.03 <span class="status-pill done">완료</span></li><li>상용 QA — 11.04 <span class="status-pill done">완료</span></li><li>배포 전 → 후 비교: 파일 업로드 화면 총 사용자 11.02(배포 전) 6,098 → 11.03~11.05 일평균 6,004 (-1.5%) — 배포 직후 뚜렷한 변화는 없고, 유입 DAU는 측정 후 확정</li><li>달성 현황: 유입 DAU 목표 19,000 대비 달성률은 측정 전 (배포 +5일 기준)</li></ul></td></tr>
-      <tr><th>금주 계획<br>(11.06~)</th><td><ul class="plain" style="margin:0;"><li>목표(왜): 7월 분기 팝업으로 줄어든 오피스도우미 유입을 회복</li><li>KPI: 유입 DAU 일평균 19,000 (목표 대비 달성률 확인)</li><li>기한: 배포 +5일(11.08) 측정 후 결과 보고 (스프린트 목표 3,000 → 19,000과 비교)</li><li>핵심 흐름: 오피스도우미 문서 뷰어 종료 → 저장 팝업 → 안심클라우드 저장 / 뷰어 상단 클라우드 저장 아이콘 → 저장</li></ul></td></tr>
-      <tr><th>산출물 링크</th><td><a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-92" target="_blank">OCEANALL-92</a> · <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-509" target="_blank">OCEANALL-509</a> · <a href="https://app.notion.com/p/v2-2026-W45-11-02-11-06-f0225368a17983dc95e3018958f9088b" target="_blank">노션 일일 업무보고 W45</a></td></tr>
-    </tbody>
-  </table>
-
-  <h2 class="section-title">5. SP2 — 오피스도우미 연계 강화 12월 배포</h2>
-  <table class="props">
-    <tbody>
-      <tr><th>상태 · 기간</th><td><span class="status-pill">진행중 (50%)</span> &nbsp;09.14 ~ 12.16</td></tr>
-      <tr><th>스프린트 목표</th><td>안심클라우드 유입 DAU 개선: 일괄 클라우드 자동저장 · 문서 보안 공유 · PASS머니 리워드로 오피스도우미 트래픽을 안심클라우드로 이관 (10월 배포에 공유 기능이 빠져 있음)</td></tr>
-      <tr><th>KR</th><td>유입 DAU 19,000 → 40,000 (일괄 클라우드 자동저장 20,000 + 문서 보안 공유 1,000 추가)</td></tr>
-      <tr><th>지난주 성과<br>(10.30~11.05)</th><td><ul class="plain" style="margin:0;"><li>지난주 완료 항목 없음 — 진행률 50% 유지</li><li>정량 비교: 10월 배포 유입 DAU 측정 결과 이후 12월 목표(40,000) 대비 갭 산정 예정</li></ul></td></tr>
-      <tr><th>금주 계획<br>(11.06~)</th><td><ul class="plain" style="margin:0;"><li>목표(왜): 오피스도우미 전체 트래픽을 안심클라우드로 이관할 구조 확보</li><li>KPI: 유입 DAU 40,000 (현 목표 19,000 대비 +21,000)</li><li>기한: 12월 버전 TC 작성 ~11.06, 자동저장에 따른 가입 약관 검토 ~11.12, 12.16 배포, 완료 보고 12.21</li><li>핵심 흐름: 오피스도우미 문서 저장 → 안심클라우드 자동저장 → 문서 보안 공유 → PASS머니 리워드</li></ul></td></tr>
-      <tr><th>산출물 링크</th><td><a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-181" target="_blank">OCEANALL-181</a> · <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-619" target="_blank">OCEANALL-619</a></td></tr>
-    </tbody>
-  </table>
-
-  <h2 class="section-title">6. SP3 — 폴라리스 스마트 스캐너 대응</h2>
-  <table class="props">
-    <tbody>
-      <tr><th>상태 · 기간</th><td><span class="status-pill">진행중</span> &nbsp;10.21 ~ 2027.03.31</td></tr>
-      <tr><th>스프린트 목표</th><td>안심클라우드 이용자 확대: 폴라리스 스마트 스캐너 신규 서비스 오픈 시 스캔 파일을 안심클라우드에 저장하도록 연동 (클라우드에만 저장하면 장애 시 스캐너 사용 불가 → 로컬 저장 + 안심클라우드 저장 병행)</td></tr>
-      <tr><th>KR</th><td>스캐너 신규 서비스 오픈 시 이용자 안심클라우드 전환 (정량 KR은 상세 시나리오 확정 시 설정)</td></tr>
-      <tr><th>지난주 성과<br>(10.30~11.05)</th><td><ul class="plain" style="margin:0;"><li>상세 시나리오 개발자 리뷰 및 피드백 반영 — 10.30 <span class="status-pill done">완료</span></li><li>폴라리스 의견 메일 검토 및 회신 — 11.05 <span class="status-pill done">완료</span></li><li>협의 결과: 로컬 저장 + 안심클라우드 저장 병행 방향 유지</li></ul></td></tr>
-      <tr><th>금주 계획<br>(11.06~)</th><td><ul class="plain" style="margin:0;"><li>목표(왜): 스캐너 신규 이용자를 안심클라우드로 전환</li><li>KPI: 정량 KR 미정 — 상세 시나리오 확정 후 설정</li><li>기한: 연계 상세 시나리오 작성 ~11.13</li><li>핵심 흐름: 스캔 → 기기(로컬) 저장 → 안심클라우드 저장 병행 → 장애 시 로컬 이용 유지</li></ul></td></tr>
-      <tr><th>산출물 링크</th><td><a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-617" target="_blank">OCEANALL-617</a> · <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-618" target="_blank">OCEANALL-618</a> · <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-906" target="_blank">OCEANALL-906</a></td></tr>
-    </tbody>
-  </table>
-
-  <h2 class="section-title">7. SP4 — 안심클라우드 쿠폰 연동</h2>
-  <table class="props">
-    <tbody>
-      <tr><th>상태 · 기간</th><td><span class="status-pill">진행중 (QA 완료)</span> &nbsp;10.21 ~ 11.18</td></tr>
-      <tr><th>스프린트 목표</th><td>유료 고객 혜택 체감 강화: 월 5천원 한도 쿠폰 제공(헬스케어 쿠폰과 같은 컨셉) — 쿠폰 신청 여부로 서비스 인지·미인지 고객을 구분</td></tr>
-      <tr><th>KR</th><td>쿠폰 연동 배포 완료 (정량 KR 설정 예정)</td></tr>
-      <tr><th>지난주 성과<br>(10.30~11.05)</th><td><ul class="plain" style="margin:0;"><li>쿠폰 QA — 11.05 <span class="status-pill done">완료</span></li><li>진행률: 기획 → QA 완료, 배포만 남음 (배포 일정은 통신사 협의)</li></ul></td></tr>
-      <tr><th>금주 계획<br>(11.06~)</th><td><ul class="plain" style="margin:0;"><li>목표(왜): 유료 고객이 서비스 혜택을 체감하도록 함</li><li>KPI: 쿠폰 신청 고객 수 (정량 KR 설정 예정)</li><li>기한: 통신사 담당자와 배포 일정 협의 후 배포 ~11.18, 완료 보고 배포 +5일</li><li>핵심 흐름: 안심클라우드 → 쿠폰 신청 → 브랜드 선택(네이버페이·CU·GS25·올리브영·다이소·카카오페이) → 월 5천원 한도 발급</li></ul></td></tr>
-      <tr><th>산출물 링크</th><td><a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-804" target="_blank">OCEANALL-804</a></td></tr>
-    </tbody>
-  </table>
-
-  <h2 class="section-title">8. SP5 — 안심클라우드 특약 보험(DB손해보험)</h2>
-  <table class="props">
-    <tbody>
-      <tr><th>상태 · 기간</th><td><span class="status-pill">진행중</span> &nbsp;10.21 ~ 미정</td></tr>
-      <tr><th>스프린트 목표</th><td>유료 고객 신뢰 강화: 데이터 소실에 대비한 DB손해보험 단체보험 적용 (예치금 납부로 청약 성립, 적용 시점·기존 회원 포함 여부·약관 반영 미정)</td></tr>
-      <tr><th>KR</th><td>보험 적용 개시 및 약관 반영 완료 (정량 KR 설정 예정)</td></tr>
-      <tr><th>지난주 성과<br>(10.30~11.05)</th><td><ul class="plain" style="margin:0;"><li>금주 진행 사항 없음</li></ul></td></tr>
-      <tr><th>금주 계획<br>(11.06~)</th><td><ul class="plain" style="margin:0;"><li>목표(왜): 데이터 소실 시 고객 보상 수단 확보</li><li>KPI: 정량 KR 설정 예정</li><li>기한: 미정 — 보험 적용 시점 및 서비스 약관(이용약관·개인정보 제3자 제공) 반영 검토</li><li>핵심 흐름: 적용 시점·대상(기존 회원 포함 여부) 확정 후 정리</li></ul></td></tr>
-      <tr><th>산출물 링크</th><td>—</td></tr>
-    </tbody>
-  </table>
-
-  <h2 class="section-title">9. SP6 — 안심클라우드 × 오피스도우미 공동 프로모션</h2>
-  <table class="props">
-    <tbody>
-      <tr><th>상태 · 기간</th><td><span class="status-pill">진행중</span> &nbsp;10.26 ~ 11.13</td></tr>
-      <tr><th>스프린트 목표</th><td>안심클라우드 유입 DAU 개선: 오피스도우미와 공동 프로모션으로 연계 강화 기본 플랜 보완</td></tr>
-      <tr><th>KR</th><td>공동 프로모션 기획 확정 (정량 KR 설정 예정)</td></tr>
-      <tr><th>지난주 성과<br>(10.30~11.05)</th><td><ul class="plain" style="margin:0;"><li>전략 기획안 2가지 안 시나리오 적용 및 전달 — 10.30 <span class="status-pill done">완료</span></li><li>이벤트 구좌 수정 후 폴라리스 전달 — 11.04 <span class="status-pill done">완료</span></li><li>진행률: 전략 기획안 전달 완료 → 공동 프로모션 기획 진행</li></ul></td></tr>
-      <tr><th>금주 계획<br>(11.06~)</th><td><ul class="plain" style="margin:0;"><li>목표(왜): 연계 강화 기본 플랜만으로 유입 목표(DAU 19,000 → 40,000)에 못 미칠 경우를 대비한 보완</li><li>KPI: 정량 KR 설정 예정 (유입 DAU 기여분)</li><li>기한: 공동 프로모션 기획 ~11.13 (완료 보고 11.13)</li><li>핵심 흐름: 오피스도우미 이벤트 구좌 노출 → 안심클라우드 유입 (세부 플로우는 기획 확정 후 정리)</li></ul></td></tr>
-      <tr><th>산출물 링크</th><td><a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-850" target="_blank">OCEANALL-850</a> · <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-750" target="_blank">OCEANALL-750</a> · <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-797" target="_blank">OCEANALL-797</a></td></tr>
-    </tbody>
-  </table>
-
-  <h2 class="section-title">10. SP7 — LGU+ 개인정보 제3자 제공 동의 약관 점검</h2>
-  <table class="props">
-    <tbody>
-      <tr><th>상태 · 기간</th><td><span class="status-pill">진행중 (4/5 단계)</span> &nbsp;10.30 ~ 11.18</td></tr>
-      <tr><th>스프린트 목표</th><td>서비스 운영 안정: LGU+ MVNO 대상 개인정보 제3자 제공 동의 약관 문구를 PASS 제공 항목과 맞추고 기존 고객에게 재동의 안내</td></tr>
-      <tr><th>KR</th><td>약관 수정 반영 및 재동의 공지 완료 (11.18 오전 반영)</td></tr>
-      <tr><th>지난주 성과<br>(10.30~11.05)</th><td><ul class="plain" style="margin:0;"><li>LGU+ 제3자 제공 동의 검토 및 업데이트 — 10.30 <span class="status-pill done">완료</span></li><li>박은영 책임님께 항목 수정 및 전달 — 11.02 <span class="status-pill done">완료</span></li><li>PASS 항목 확인 후 박은영 책임님·PASS에 전달 — 11.04 <span class="status-pill done">완료</span></li><li>재동의 화면 확인 및 공지사항 등록 — 11.05 <span class="status-pill done">완료</span></li><li>진행률: 5단계 중 4단계 완료 (80%)</li></ul></td></tr>
-      <tr><th>금주 계획<br>(11.06~)</th><td><ul class="plain" style="margin:0;"><li>목표(왜): 제3자 제공 항목 불일치 해소</li><li>KPI: 약관 수정 반영 및 재동의 공지 완료율 100%</li><li>기한: 약관 수정 반영 11.18 오전</li><li>핵심 흐름: 항목 수정 → PASS 확인 → 재동의 화면·공지 등록 → 약관 반영</li></ul></td></tr>
-      <tr><th>산출물 링크</th><td><a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-795" target="_blank">OCEANALL-795</a></td></tr>
-    </tbody>
-  </table>
-
-  <h2 class="section-title">11. SP8 — 미인지·미사용 유료 고객 활성화 기획</h2>
-  <table class="props">
-    <tbody>
-      <tr><th>상태 · 기간</th><td><span class="status-pill">진행중 (3/4 단계)</span> &nbsp;11.02 ~ 11.13</td></tr>
-      <tr><th>스프린트 목표</th><td>유료 고객 유지: 유료 가입 후 서비스를 인지하지 못하거나 사용하지 않는 고객의 이용 유도 (LGU+ 박성훈 책임님 요청)</td></tr>
-      <tr><th>KR</th><td>활성화 전략 기획서 및 화면 기획서 완료 (정량 KR 설정 예정)</td></tr>
-      <tr><th>지난주 성과<br>(10.30~11.05)</th><td><ul class="plain" style="margin:0;"><li>유료 가입 후 미사용 고객의 지속 사용 유도 기획 — 11.02 <span class="status-pill done">완료</span></li><li>전략 기획 리뷰 — 11.04 <span class="status-pill done">완료</span></li><li>리뷰 피드백 반영 — 11.05 <span class="status-pill done">완료</span></li><li>진행률: 4단계 중 3단계 완료 (75%)</li><li>참고 지표: 유료가입 대비 당일해지율 LGU+ 13.3% → 15.7%, SKT 26.5% → 27.7% (전주 → 금주) — 가입 직후 이탈이 늘어 활성화 필요성 확인</li></ul></td></tr>
-      <tr><th>금주 계획<br>(11.06~)</th><td><ul class="plain" style="margin:0;"><li>목표(왜): 외부 가입창 등으로 가입한 뒤 서비스를 쓰지 않는 고객의 지속 사용 유도</li><li>KPI: 정량 KR 설정 예정 (당일해지율·지연해지 개선 등)</li><li>기한: 전략 기획서 업데이트 및 화면 기획서 작성 ~11.13</li><li>핵심 흐름: 전략 기획서 확정 후 화면 기획서와 함께 정리</li></ul></td></tr>
-      <tr><th>산출물 링크</th><td><a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-864" target="_blank">OCEANALL-864</a></td></tr>
-    </tbody>
-  </table>
-
-  <h2 class="section-title">12. 서비스 운영 — 안심클라우드</h2>
-  <table class="props">
-    <tbody>
-      <tr><th>상태 · 기간</th><td><span class="status-pill">운영</span> &nbsp;상시</td></tr>
-      <tr><th>스프린트 목표</th><td>서비스 운영 안정: 월 정산·보고, 정책 변경 대응, 가입 화면 개선</td></tr>
-      <tr><th>KR</th><td>월 정산·보고 기한 준수, 정책 변경 대응 TC 완료</td></tr>
-      <tr><th>지난주 성과<br>(10.30~11.05)</th><td><ul class="plain" style="margin:0;"><li>10월 LG·SKT 유료 가입자 및 타사 출시 현황 전달 — 10.30 <span class="status-pill done">완료</span></li><li>LGU+ 10월 웹하드 정산 — 11.02 <span class="status-pill done">완료</span></li><li>Google Drive Picker API 정책 변경 대응 TC 작성 및 테스트 결과서 작성 — 11.04 <span class="status-pill done">완료</span></li><li>정량: 10월 최종 MAU 417,291 (목표 60만 대비 69.5%), 10월 말(10.31) 유료 누적 LGU+ 21,110 · SKT 10,767</li></ul></td></tr>
-      <tr><th>금주 계획<br>(11.06~)</th><td><ul class="plain" style="margin:0;"><li>외부 가입 완료 화면 SKT용 PASS 이동 버튼 추가, SKT 제휴부가서비스 광고 메시지 점검 회신 — ~11.10</li><li>SKT PASS 3.13.21 버전 전체 테스트 — ~12.04</li><li>11월 말 타사 출시 현황·가입자 전달, 11월 웹하드 정산 — 월말·월초</li></ul></td></tr>
-      <tr><th>산출물 링크</th><td><a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-104" target="_blank">OCEANALL-104</a> · <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-863" target="_blank">OCEANALL-863</a> · <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-895" target="_blank">OCEANALL-895</a> · <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-896" target="_blank">OCEANALL-896</a> · <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-869" target="_blank">OCEANALL-869</a></td></tr>
-    </tbody>
-  </table>
-
-  <hr class="divider">
-
-  <!-- 13 -->
-  <h2 class="section-title">13. 유형별 업무 진행 내용 — 안심클라우드 · 휴대폰 분실 피해 방지</h2>
-
-  <div class="week-block">
-    <h3 class="sub-title" style="margin-top:0;">지난주 진행 업무 (10.23 ~ 10.29)</h3>
-    <div class="group-label">구축</div>
-    <ul class="plain">
-      <li>LGU+ ARS 해지 기능 추가·해지 테스트, 가입완료·이용안내 문자 문구 기획 — 10.23 <span class="status-pill done">완료</span></li>
-      <li>LGU+ 서비스 소개 자료 검수·최종 이미지 전달, 오픈 전 확인사항 회신 — 10.26 ~ 10.27 <span class="status-pill done">완료</span></li>
-      <li>ngCAS 이관 대응, 개인정보 3자 제공 동의 수정 전달 — 10.27 <span class="status-pill done">완료</span></li>
-      <li>외부 가입창·가입완료·75세 이상 가입 문구 기획 — 10.27 <span class="status-pill done">완료</span></li>
-      <li>상담사 교육, 매거진 등록, GTM 세팅 — 10.27 ~ 10.28 <span class="status-pill done">완료</span></li>
-      <li>SKT 폰지킴 내부 QA — 10.27 <span class="status-pill done">완료</span></li>
-      <li>LGU+ 휴대폰 분실 피해 방지 오픈, 운영 QA, 안드로이드 게스트 출시 전 문구 기획 — 10.29 <span class="status-pill done">완료</span></li>
-    </ul>
-    <div class="group-label">개선</div>
-    <ul class="plain">
-      <li>12월 배포 자동저장 내부 처리 로직 논의 — 10.23 <span class="status-pill done">완료</span></li>
-      <li>스마트 스캐너 상세 시나리오 초안 — 10.23 ~ 10.26 <span class="status-pill done">완료</span></li>
-      <li>쿠폰 연동 기획 마무리, 검수 테스트 쿠폰 발급 — 10.23 ~ 10.26 <span class="status-pill done">완료</span></li>
-      <li>10월 배포 CVT 2차, 12월 배포 개발 정책 대응 — 10.26 <span class="status-pill done">완료</span></li>
-      <li>DB손해보험 미팅 전 질문 리스트업 — 10.28 <span class="status-pill done">완료</span></li>
-      <li>12월 배포 상세 시나리오·Flow chart 피드백 반영, 공동 프로모션 전략 기획안 시나리오 추가 — 10.29 <span class="status-pill done">완료</span></li>
-    </ul>
+  <!-- 4 -->
+  <h2 class="section-title">4. 스프린트별 지난주 성과 · 금주 계획</h2>
+  <div class="period-note">지난주 성과 10.30(금)~11.05(목) · 금주 계획 11.06(금)~</div>
+  <div class="sp">
+    <div class="sp-head"><span class="sp-no">SP1</span> 오피스도우미 연계 강화 10월 배포 <span class="st done">배포 완료 100%</span> <span class="per">07.28 ~ 11.03</span></div>
+    <div class="sp-goal">오피스도우미 → 안심클라우드 유입 DAU 일평균 <b>3,000 → 19,000</b></div>
+    <table class="split">
+      <thead><tr><th class="l">지난주 성과</th><th class="r">금주 계획</th></tr></thead>
+      <tbody><tr><td class="l"><ul><li>10월 배포 상용 반영 <span class="st done">완료</span> 11.03</li><li>상용 QA <span class="st done">완료</span> 11.04</li><li>파일 업로드 화면 총 사용자 <b>6,098(11.02, 배포 전) → 일평균 6,004(11.03~05)</b>, 배포 직후 변화 없음</li><li>유입 DAU 달성률은 측정 전</li></ul></td><td class="r"><ul><li><b>목표</b> 유입 DAU 19,000 달성 확인</li><li><b>KPI</b> 유입 DAU 일평균 (목표 19,000 대비 달성률)</li><li><b>기한</b> 배포+5일(11.08) 측정 → 결과 보고</li><li><b>흐름</b> 뷰어 종료 → 저장 팝업 → 안심클라우드 저장</li></ul></td></tr></tbody>
+    </table>
+    <div class="lk">산출물 <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-92" target="_blank">92</a> · <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-509" target="_blank">509</a></div>
+  </div>
+  <div class="sp">
+    <div class="sp-head"><span class="sp-no">SP2</span> 오피스도우미 연계 강화 12월 배포 <span class="st ">진행 50%</span> <span class="per">09.14 ~ 12.16</span></div>
+    <div class="sp-goal">유입 DAU <b>19,000 → 40,000</b> (자동저장 20,000 + 보안 공유 1,000)</div>
+    <table class="split">
+      <thead><tr><th class="l">지난주 성과</th><th class="r">금주 계획</th></tr></thead>
+      <tbody><tr><td class="l"><ul><li>완료 항목 없음 (50% 유지)</li></ul></td><td class="r"><ul><li><b>목표</b> 오피스도우미 트래픽 이관 구조 확보</li><li><b>KPI</b> 유입 DAU 40,000</li><li><b>기한</b> 12월 버전 TC ~11.06 · 자동저장 약관 검토 ~11.12 · 12.16 배포</li><li><b>흐름</b> 문서 저장 → 자동저장 → 보안 공유 → PASS머니 리워드</li></ul></td></tr></tbody>
+    </table>
+    <div class="lk">산출물 <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-181" target="_blank">181</a> · <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-619" target="_blank">619</a></div>
+  </div>
+  <div class="sp">
+    <div class="sp-head"><span class="sp-no">SP3</span> 폴라리스 스마트 스캐너 대응 <span class="st ">진행중</span> <span class="per">10.21 ~ 2027.03.31</span></div>
+    <div class="sp-goal">스캐너 신규 이용자의 안심클라우드 전환 (정량 KR은 시나리오 확정 시 설정)</div>
+    <table class="split">
+      <thead><tr><th class="l">지난주 성과</th><th class="r">금주 계획</th></tr></thead>
+      <tbody><tr><td class="l"><ul><li>상세 시나리오 개발자 리뷰·피드백 반영 <span class="st done">완료</span> 10.30</li><li>폴라리스 의견 메일 검토·회신 <span class="st done">완료</span> 11.05</li><li>로컬 저장 + 안심클라우드 저장 병행 방향 유지</li></ul></td><td class="r"><ul><li><b>목표</b> 스캐너 이용자 안심클라우드 전환</li><li><b>KPI</b> 정량 KR 미정 (시나리오 확정 후)</li><li><b>기한</b> 연계 상세 시나리오 작성 ~11.13</li><li><b>흐름</b> 스캔 → 로컬 저장 → 안심클라우드 병행 저장</li></ul></td></tr></tbody>
+    </table>
+    <div class="lk">산출물 <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-617" target="_blank">617</a> · <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-618" target="_blank">618</a> · <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-906" target="_blank">906</a></div>
+  </div>
+  <div class="sp">
+    <div class="sp-head"><span class="sp-no">SP4</span> 안심클라우드 쿠폰 연동 <span class="st ">QA 완료</span> <span class="per">10.21 ~ 11.18</span></div>
+    <div class="sp-goal">월 5천원 한도 쿠폰으로 유료 고객 혜택 체감 (정량 KR 설정 예정)</div>
+    <table class="split">
+      <thead><tr><th class="l">지난주 성과</th><th class="r">금주 계획</th></tr></thead>
+      <tbody><tr><td class="l"><ul><li>쿠폰 QA <span class="st done">완료</span> 11.05</li><li>남은 단계: 통신사 협의 후 배포</li></ul></td><td class="r"><ul><li><b>목표</b> 유료 고객 혜택 체감 + 인지 고객 구분</li><li><b>KPI</b> 쿠폰 신청 고객 수 (설정 예정)</li><li><b>기한</b> 통신사 배포 일정 협의 후 배포 ~11.18</li><li><b>흐름</b> 쿠폰 신청 → 브랜드 선택 → 월 5천원 발급</li></ul></td></tr></tbody>
+    </table>
+    <div class="lk">산출물 <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-804" target="_blank">804</a></div>
+  </div>
+  <div class="sp">
+    <div class="sp-head"><span class="sp-no">SP5</span> 안심클라우드 특약 보험(DB손해보험) <span class="st ">진행중</span> <span class="per">10.21 ~ 미정</span></div>
+    <div class="sp-goal">데이터 소실 대비 단체보험 적용 (정량 KR 설정 예정)</div>
+    <table class="split">
+      <thead><tr><th class="l">지난주 성과</th><th class="r">금주 계획</th></tr></thead>
+      <tbody><tr><td class="l"><ul><li>진행 사항 없음</li></ul></td><td class="r"><ul><li><b>목표</b> 데이터 소실 시 고객 보상 수단 확보</li><li><b>KPI</b> 설정 예정</li><li><b>기한</b> 미정</li><li><b>검토</b> 적용 시점 · 기존 회원 포함 여부 · 약관 반영</li></ul></td></tr></tbody>
+    </table>
+    
+  </div>
+  <div class="sp">
+    <div class="sp-head"><span class="sp-no">SP6</span> 안심클라우드 × 오피스도우미 공동 프로모션 <span class="st ">진행중</span> <span class="per">10.26 ~ 11.13</span></div>
+    <div class="sp-goal">기본 플랜으로 모자란 유입 DAU를 공동 프로모션으로 보완 (정량 KR 설정 예정)</div>
+    <table class="split">
+      <thead><tr><th class="l">지난주 성과</th><th class="r">금주 계획</th></tr></thead>
+      <tbody><tr><td class="l"><ul><li>전략 기획안 2가지 안 시나리오 적용·전달 <span class="st done">완료</span> 10.30</li><li>이벤트 구좌 수정 후 폴라리스 전달 <span class="st done">완료</span> 11.04</li></ul></td><td class="r"><ul><li><b>목표</b> 유입 DAU 19,000 → 40,000 보완</li><li><b>KPI</b> 설정 예정 (유입 DAU 기여분)</li><li><b>기한</b> 공동 프로모션 기획 ~11.13</li></ul></td></tr></tbody>
+    </table>
+    <div class="lk">산출물 <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-850" target="_blank">850</a> · <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-750" target="_blank">750</a> · <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-797" target="_blank">797</a></div>
+  </div>
+  <div class="sp">
+    <div class="sp-head"><span class="sp-no">SP7</span> LGU+ 개인정보 제3자 제공 동의 약관 점검 <span class="st ">4/5 단계 (80%)</span> <span class="per">10.30 ~ 11.18</span></div>
+    <div class="sp-goal">제3자 제공 항목을 PASS 제공 항목과 일치 + 재동의 안내</div>
+    <table class="split">
+      <thead><tr><th class="l">지난주 성과</th><th class="r">금주 계획</th></tr></thead>
+      <tbody><tr><td class="l"><ul><li>항목 검토·수정 <span class="st done">완료</span> 10.30</li><li>박은영 책임님 전달 <span class="st done">완료</span> 11.02</li><li>PASS 항목 확인·전달 <span class="st done">완료</span> 11.04</li><li>재동의 화면 확인·공지 등록 <span class="st done">완료</span> 11.05</li></ul></td><td class="r"><ul><li><b>목표</b> 항목 불일치 해소</li><li><b>KPI</b> 약관 반영·재동의 공지 100%</li><li><b>기한</b> 약관 수정 반영 11.18 오전</li></ul></td></tr></tbody>
+    </table>
+    <div class="lk">산출물 <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-795" target="_blank">795</a></div>
+  </div>
+  <div class="sp">
+    <div class="sp-head"><span class="sp-no">SP8</span> 미인지·미사용 유료 고객 활성화 기획 <span class="st ">3/4 단계 (75%)</span> <span class="per">11.02 ~ 11.13</span></div>
+    <div class="sp-goal">가입 후 서비스를 모르거나 안 쓰는 고객의 이용 유도 (정량 KR 설정 예정)</div>
+    <table class="split">
+      <thead><tr><th class="l">지난주 성과</th><th class="r">금주 계획</th></tr></thead>
+      <tbody><tr><td class="l"><ul><li>활성화 기획 <span class="st done">완료</span> 11.02</li><li>전략 기획 리뷰 <span class="st done">완료</span> 11.04</li><li>리뷰 피드백 반영 <span class="st done">완료</span> 11.05</li><li>참고: 당일해지율 <b>LGU+ 13.3% → 15.7%, SKT 26.5% → 27.7%</b> (전주 → 금주)</li></ul></td><td class="r"><ul><li><b>목표</b> 가입 후 미사용 고객 지속 사용 유도</li><li><b>KPI</b> 설정 예정 (해지율 개선 등)</li><li><b>기한</b> 전략 기획서 업데이트·화면 기획서 ~11.13</li></ul></td></tr></tbody>
+    </table>
+    <div class="lk">산출물 <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-864" target="_blank">864</a></div>
+  </div>
+  <div class="sp">
+    <div class="sp-head"><span class="sp-no">운영</span> 서비스 운영 — 안심클라우드 <span class="st ">상시</span></div>
+    <div class="sp-goal">월 정산·보고, 정책 변경 대응, 가입 화면 개선</div>
+    <table class="split">
+      <thead><tr><th class="l">지난주 성과</th><th class="r">금주 계획</th></tr></thead>
+      <tbody><tr><td class="l"><ul><li>10월 LG·SKT 가입자·타사 출시 현황 전달 <span class="st done">완료</span> 10.30</li><li>LGU+ 10월 웹하드 정산 <span class="st done">완료</span> 11.02</li><li>Drive Picker 정책 변경 TC·결과서 <span class="st done">완료</span> 11.04</li><li>10월 최종 MAU <b>417,291 (목표 60만 대비 69.5%)</b></li></ul></td><td class="r"><ul><li>SKT용 PASS 이동 버튼 추가 · SKT 광고 메시지 점검 회신 ~11.10</li><li>SKT PASS 3.13.21 전체 테스트 ~12.04</li><li>월말 타사 출시 현황 전달 · 11월 웹하드 정산</li></ul></td></tr></tbody>
+    </table>
+    <div class="lk">산출물 <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-104" target="_blank">104</a> · <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-863" target="_blank">863</a> · <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-895" target="_blank">895</a> · <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-896" target="_blank">896</a> · <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-869" target="_blank">869</a></div>
   </div>
 
-  <div class="week-block">
-    <h3 class="sub-title" style="margin-top:0;">이번주 진행 업무 (10.30 ~ 11.05, 11.03 연차)</h3>
-    <div class="group-label">운영</div>
-    <ul class="plain">
-      <li>10월 LG·SKT 유료 가입자 및 타사 출시 현황 전달 — 10.30 <span class="status-pill done">완료</span></li>
-      <li>LGU+ 10월 웹하드 정산 — 11.02 <span class="status-pill done">완료</span></li>
-      <li>Google Drive Picker API 정책 변경 대응 TC·테스트 결과서 작성 — 11.04 <span class="status-pill done">완료</span></li>
-    </ul>
-    <div class="group-label">개선</div>
-    <ul class="plain">
-      <li>공동 프로모션 전략 기획안 2가지 안 전달, 스캐너 상세 시나리오 개발자 리뷰 반영 — 10.30 <span class="status-pill done">완료</span></li>
-      <li>LGU+ 제3자 제공 동의 약관 항목 수정·전달 — 10.30 ~ 11.04 <span class="status-pill done">완료</span></li>
-      <li>미인지·미사용 유료 고객 활성화 기획·리뷰·피드백 반영 — 11.02 ~ 11.05 <span class="status-pill done">완료</span></li>
-      <li>10월 배포 상용 QA, 공동 프로모션 이벤트 구좌 수정 후 전달 — 11.04 <span class="status-pill done">완료</span></li>
-      <li>쿠폰 QA, 스캐너 폴라리스 의견 회신, 재동의 화면 확인 및 공지 등록 — 11.05 <span class="status-pill done">완료</span></li>
-    </ul>
-  </div>
-
-  <!-- 14 -->
-  <h2 class="section-title">14. 진행할 업무 항목</h2>
-  <ul class="plain">
-    <li>오피스도우미 연계 10월 배포 유입 DAU 측정 및 결과 보고</li>
-    <li>LGU+ 박성훈 책임님 요구사항 회신, 12월 버전 TC 작성, 자동저장 가입 약관 검토 (~11.12)</li>
-    <li>스마트 스캐너 연계 상세 시나리오 작성 (~11.13)</li>
-    <li>쿠폰 배포 일정 통신사 협의 후 배포 (~11.18)</li>
-    <li>공동 프로모션 기획 (~11.13)</li>
-    <li>미인지·미사용 유료 고객 활성화 전략 기획서 업데이트 및 화면 기획서 작성 (~11.13)</li>
-    <li>LGU+ 개인정보 제3자 제공 동의 약관 반영 (11.18 오전)</li>
-    <li>외부 가입 완료 화면 SKT용 PASS 이동 버튼 추가, SKT 제휴부가서비스 광고 메시지 점검 회신 (~11.10)</li>
-    <li>SKT PASS 3.13.21 버전 전체 테스트 (~12.04)</li>
-    <li>SKT 폰지킴 해지 테스트, 가입완료 문자 문구 작성, 오픈 대응 (~12.11)</li>
-  </ul>
-
+  <p class="foot-note">산출물 링크는 JIRA(OCEANALL) 이슈이며, 일일 업무 기록은 <a href="https://app.notion.com/p/v2-2026-W45-11-02-11-06-f0225368a17983dc95e3018958f9088b" target="_blank">노션 W45</a>에서 볼 수 있습니다.</p>
 </div>
 </body>
 </html>

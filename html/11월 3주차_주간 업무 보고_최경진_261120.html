@@ -102,98 +102,40 @@
 
   <!-- 1 -->
   <h2 class="section-title">1. 안심클라우드 핵심 지표</h2>
-  <h3 class="sub-title">측정 지표 — 주간 · 누적</h3>
   <div class="goal-chip">목표 · 주간 주소록 백업 설정 완료 전환수 상승 (N &gt; NN)</div>
   <div class="scroll">
   <table class="data">
-    <colgroup><col style="width:9%"><col style="width:20%"><col><col><col style="width:12%"><col style="width:36%"></colgroup>
-    <thead><tr><th>구분</th><th>측정지표</th><th class="center">주간<br><span style="font-weight:400">11.13~11.19</span></th><th class="center">누적</th><th class="center">상태</th><th>비고</th></tr></thead>
+    <colgroup><col style="width:8%"><col style="width:22%"><col style="width:12%"><col style="width:12%"><col style="width:12%"><col></colgroup>
+    <thead><tr><th>구분</th><th>측정지표</th><th class="center">주간<br><span style="font-weight:400">11.13~11.19</span></th><th class="center">누적</th><th class="center">상태</th><th>비고 · 관련 업무</th></tr></thead>
     <tbody>
-      <tr><td>유입</td><td>전체 MAU (최근 30일)</td><td class="center" colspan="2">343,047</td><td class="center"><span class="st warn">보정 필요</span></td><td>활성 사용자 · 10.21~11.19 · 목표 60만 대비 57.2%</td></tr>
-      <tr><td>전환</td><td>파일 업로드 완료 수</td><td class="center">3,519</td><td class="center">258,300</td><td class="center"><span class="st warn">보정 필요</span></td><td>업로드 시도 후 콜백 도달 수 (성공 여부 미포함)</td></tr>
-      <tr><td>전환</td><td>자동백업 설정 완료 수</td><td class="center">6</td><td class="center">133</td><td class="center"><span class="st">정상</span></td><td>스마트 자동 업로드 설정 저장 · 주간 6명 수준</td></tr>
-      <tr class="hl"><td>전환</td><td>★ 주소록 백업 설정 완료 수 (목표)</td><td class="center">58</td><td class="center">1,315</td><td class="center"><span class="st warn">보정 필요</span></td><td>켠 경우와 끈 경우가 섞였을 수 있음 · 정의 확정 필요</td></tr>
-      <tr><td>전환</td><td>분실 감지 백업 설정 완료 수</td><td class="center">0</td><td class="center">1</td><td class="center"><span class="st warn">보정 필요</span></td><td>이벤트는 수집되나 설정한 고객이 거의 없음</td></tr>
-      <tr><td>전환</td><td>통합 클라우드 연결 고객 수</td><td class="center">163</td><td class="center">3,375</td><td class="center"><span class="st">정상</span></td><td>구글드라이브 · 원드라이브 · 드롭박스 연동 완료</td></tr>
-      <tr><td>전환</td><td>공유 완료 수</td><td class="center">110</td><td class="center">7,346</td><td class="center"><span class="st warn">보정 필요</span></td><td>공유 링크 생성 기준 (수신자 열람 미포함)</td></tr>
+      <tr><td>유입</td><td>전체 MAU (최근 30일)</td><td class="center" colspan="2">343,047</td><td class="center"><span class="st warn">보정 필요</span></td><td>10.21~11.19 · 목표 60만 대비 57.2% · SP1·SP2</td></tr>
+      <tr><td>전환</td><td>파일 업로드 완료 수</td><td class="center">3,519</td><td class="center">258,300</td><td class="center"><span class="st warn">보정 필요</span></td><td>시도 후 콜백 기준(성공 미포함) · SP1·SP2</td></tr>
+      <tr><td>전환</td><td>자동백업 설정 완료 수</td><td class="center">6</td><td class="center">133</td><td class="center"><span class="st">정상</span></td><td></td></tr>
+      <tr class="hl"><td>전환</td><td>★ 주소록 백업 설정 완료 수 (목표)</td><td class="center">58</td><td class="center">1,315</td><td class="center"><span class="st warn">보정 필요</span></td><td>켬·끔 혼재 가능, 정의 확정 필요 · SP9</td></tr>
+      <tr><td>전환</td><td>분실 감지 백업 설정 완료 수</td><td class="center">0</td><td class="center">1</td><td class="center"><span class="st warn">보정 필요</span></td><td>설정 고객 거의 없음</td></tr>
+      <tr><td>전환</td><td>통합 클라우드 연결 고객 수</td><td class="center">163</td><td class="center">3,375</td><td class="center"><span class="st">정상</span></td><td></td></tr>
+      <tr><td>전환</td><td>공유 완료 수</td><td class="center">110</td><td class="center">7,346</td><td class="center"><span class="st warn">보정 필요</span></td><td>링크 생성 기준(수신 열람 미포함)</td></tr>
     </tbody>
   </table>
   </div>
-  <p class="foot-note">GA4 이벤트 사용자(총 사용자) 기준이며, 누적은 GA 유효 데이터 시작일(06.24)~11.19입니다. 전체 MAU는 보고 주간 마지막 날(11.19)까지 최근 30일(10.21~11.19) 활성 사용자이고, 운영 호스트 필터는 적용하지 않았습니다(차이 약 0.1%). 목표값(N &gt; NN)은 아직 정하지 않았습니다.</p>
+  <p class="foot-note">GA4 이벤트 사용자 기준 · 누적은 06.24~11.19 · MAU는 운영 호스트 필터 미적용(차이 약 0.1%) · 목표값(N &gt; NN) 미정</p>
 
-  <h3 class="sub-title">일별 추이</h3>
-  <div class="period-note">11.13(금) ~ 11.19(목) · 주말(11.14·11.15) 포함 7일 · 11.13 연차 · ★ = 오피스도우미 → 안심클라우드 유입 구좌(DAU 2만 목표)</div>
-  <div class="scroll">
-  <table class="data wide">
-    <colgroup><col class="item"><col><col><col><col><col><col><col><col></colgroup>
-    <thead><tr><th>항목</th><th class="center">합계</th><th class="center">11.13<br><span style="font-weight:400">(금)</span></th><th class="center">11.14<br><span style="font-weight:400">(토)</span></th><th class="center">11.15<br><span style="font-weight:400">(일)</span></th><th class="center">11.16<br><span style="font-weight:400">(월)</span></th><th class="center">11.17<br><span style="font-weight:400">(화)</span></th><th class="center">11.18<br><span style="font-weight:400">(수)</span></th><th class="center">11.19<br><span style="font-weight:400">(목)</span></th></tr></thead>
-    <tbody>
-<tr><td>MAU (최근 30일)**</td><td class="center">343,047</td><td class="center" colspan="7">10.21 ~ 11.19 기준 (금주 동일 값)</td></tr>
-<tr><td>DAU (총 사용자)*</td><td class="center">34,060</td><td class="center">5,413</td><td class="center">3,560</td><td class="center">3,276</td><td class="center">6,045</td><td class="center">5,470</td><td class="center">5,292</td><td class="center">5,004</td></tr>
-<tr class="hl"><td>★ 클라우드_파일 업로드</td><td class="center">6,218</td><td class="center">1,077</td><td class="center">580</td><td class="center">545</td><td class="center">1,242</td><td class="center">1,047</td><td class="center">833</td><td class="center">894</td></tr>
-<tr><td>홈</td><td class="center">6,479</td><td class="center">1,073</td><td class="center">659</td><td class="center">571</td><td class="center">1,216</td><td class="center">1,151</td><td class="center">891</td><td class="center">918</td></tr>
-<tr><td>클라우드_안심클라우드</td><td class="center">3,304</td><td class="center">553</td><td class="center">317</td><td class="center">273</td><td class="center">653</td><td class="center">517</td><td class="center">491</td><td class="center">500</td></tr>
-<tr><td>공유 내역</td><td class="center">292</td><td class="center">38</td><td class="center">28</td><td class="center">27</td><td class="center">55</td><td class="center">50</td><td class="center">44</td><td class="center">50</td></tr>
-<tr><td>설정</td><td class="center">229</td><td class="center">35</td><td class="center">22</td><td class="center">22</td><td class="center">37</td><td class="center">40</td><td class="center">47</td><td class="center">26</td></tr>
-      <tr class="group"><td colspan="9">LGU+</td></tr>
-<tr><td>당일 유료가입</td><td class="center">4,146</td><td class="center">864</td><td class="center">698</td><td class="center">389</td><td class="center">555</td><td class="center">636</td><td class="center">597</td><td class="center">407</td></tr>
-<tr><td>유료 당일해지 (가입 대비)</td><td class="center">821 / (19.8%)</td><td class="center">166</td><td class="center">149</td><td class="center">65</td><td class="center">110</td><td class="center">129</td><td class="center">127</td><td class="center">75</td></tr>
-<tr><td>유료 지연해지</td><td class="center">1,963</td><td class="center">335</td><td class="center">295</td><td class="center">181</td><td class="center">137</td><td class="center">341</td><td class="center">369</td><td class="center">305</td></tr>
-<tr><td>유료 누적**</td><td class="center">28,765</td><td class="center">27,766</td><td class="center">28,020</td><td class="center">28,163</td><td class="center">28,471</td><td class="center">28,637</td><td class="center">28,738</td><td class="center">28,765</td></tr>
-      <tr class="group"><td colspan="9">SKT</td></tr>
-<tr><td>당일 유료가입</td><td class="center">5,900</td><td class="center">1,170</td><td class="center">1,062</td><td class="center">583</td><td class="center">912</td><td class="center">919</td><td class="center">593</td><td class="center">661</td></tr>
-<tr><td>유료 당일해지 (가입 대비)</td><td class="center">1,513 / (25.6%)</td><td class="center">341</td><td class="center">231</td><td class="center">123</td><td class="center">248</td><td class="center">244</td><td class="center">166</td><td class="center">160</td></tr>
-<tr><td>유료 지연해지</td><td class="center">1,371</td><td class="center">224</td><td class="center">98</td><td class="center">64</td><td class="center">274</td><td class="center">232</td><td class="center">287</td><td class="center">192</td></tr>
-<tr><td>유료 누적**</td><td class="center">22,213</td><td class="center">19,802</td><td class="center">20,535</td><td class="center">20,931</td><td class="center">21,321</td><td class="center">21,764</td><td class="center">21,904</td><td class="center">22,213</td></tr>
-    </tbody>
-  </table>
-  </div>
-  <p class="foot-note">*DAU = GA 총 사용자이며, 합계는 일별 단순 합산(중복 포함)입니다. 평일 화면별 값은 구글 시트 기록, 주말(11.14·11.15)은 GA 페이지 및 화면 보고서의 활성 사용자 기준입니다. **MAU는 보고 주간 마지막 날(11.19)까지 최근 30일 활성 사용자 하나의 값이라 일별로 나누지 않았습니다. 유료 누적의 합계 칸은 11.19 값입니다.</p>
-  <h3 class="sub-title">페이지 및 경로 — 전주 대비 (전체 화면 방문, 조회수)</h3>
-  <div class="period-note">전주 11.06(금)~11.12(목) vs 금주 11.13(금)~11.19(목) · 양주 모두 7일(주말 포함)</div>
+  <h3 class="sub-title">보조 지표 — 전주 대비</h3>
+  <div class="period-note">전주 11.06~11.12 vs 금주 11.13~11.19 · 7일(주말 포함) · MAU는 각 기간 마지막 날 기준 최근 30일</div>
   <div class="scroll">
   <table class="data">
     <colgroup><col style="width:44%"><col><col><col></colgroup>
-    <thead><tr><th>화면</th><th class="center">전주</th><th class="center">금주</th><th class="center">증감</th></tr></thead>
+    <thead><tr><th>항목</th><th class="center">전주</th><th class="center">금주</th><th class="center">증감</th></tr></thead>
     <tbody>
-      <tr class="hl"><td>★ 파일 업로드(/view/cloud/passupload)</td><td class="center">25,715</td><td class="center">7,446</td><td class="center diff-cell"><span class="diff-down">▼ 18,269 (-71.0%)</span></td></tr>
-      <tr><td>홈(/view/home)</td><td class="center">28,670</td><td class="center">10,298</td><td class="center diff-cell"><span class="diff-down">▼ 18,372 (-64.1%)</span></td></tr>
-      <tr><td>가입 소개(/view/upass/upassfreejoinintro)</td><td class="center">49,373</td><td class="center">24,357</td><td class="center diff-cell"><span class="diff-down">▼ 25,016 (-50.7%)</span></td></tr>
-      <tr><td>안심클라우드(/view/cloud/webhard)</td><td class="center">16,652</td><td class="center">5,467</td><td class="center diff-cell"><span class="diff-down">▼ 11,185 (-67.2%)</span></td></tr>
-      <tr><td>전체 조회수</td><td class="center">134,644</td><td class="center">56,142</td><td class="center diff-cell"><span class="diff-down">▼ 78,502 (-58.3%)</span></td></tr>
-      <tr><td>전체 이벤트 수</td><td class="center">439,054</td><td class="center">173,662</td><td class="center diff-cell"><span class="diff-down">▼ 265,392 (-60.4%)</span></td></tr>
-    </tbody>
-  </table>
-  </div>
-  <p class="foot-note">★ 파일 업로드 화면이 오피스도우미에서 안심클라우드로 들어오는 구좌로, 유입 DAU 2만에 가까워져야 하는 지표입니다. 이 화면의 총 사용자는 위 일별 추이를 보세요.</p>
-  <h3 class="sub-title">주간 비교 — 전주 대비</h3>
-  <div class="period-note">전주 11.06(금)~11.12(목) vs 금주 11.13(금)~11.19(목) · 양주 모두 7일(주말 포함)</div>
-  <div class="scroll">
-  <table class="data">
-    <colgroup><col class="item"><col><col><col></colgroup>
-    <thead><tr><th>항목</th><th class="center">전주 합계</th><th class="center">금주 합계</th><th class="center">증감</th></tr></thead>
-    <tbody>
-      <tr><td>MAU (최근 30일)**</td><td class="center">409,159</td><td class="center">343,047</td><td class="center diff-cell"><span class="diff-down">▼ 66,112 (-16.2%)</span></td></tr>
+      <tr><td>MAU (최근 30일)</td><td class="center">409,159</td><td class="center">343,047</td><td class="center diff-cell"><span class="diff-down">▼ 66,112 (-16.2%)</span></td></tr>
       <tr><td>DAU (총 사용자)</td><td class="center">76,082</td><td class="center">34,060</td><td class="center diff-cell"><span class="diff-down">▼ 42,022 (-55.2%)</span></td></tr>
-      <tr class="hl"><td>★ 클라우드_파일 업로드</td><td class="center">22,140</td><td class="center">6,218</td><td class="center diff-cell"><span class="diff-down">▼ 15,922 (-71.9%)</span></td></tr>
-      <tr><td>홈</td><td class="center">18,878</td><td class="center">6,479</td><td class="center diff-cell"><span class="diff-down">▼ 12,399 (-65.7%)</span></td></tr>
-      <tr><td>클라우드_안심클라우드</td><td class="center">12,442</td><td class="center">3,304</td><td class="center diff-cell"><span class="diff-down">▼ 9,138 (-73.4%)</span></td></tr>
-      <tr><td>공유 내역</td><td class="center">656</td><td class="center">292</td><td class="center diff-cell"><span class="diff-down">▼ 364 (-55.5%)</span></td></tr>
-      <tr><td>설정</td><td class="center">501</td><td class="center">229</td><td class="center diff-cell"><span class="diff-down">▼ 272 (-54.3%)</span></td></tr>
-      <tr class="group"><td colspan="4">LGU+</td></tr>
-      <tr><td>당일 유료가입</td><td class="center">6,777</td><td class="center">4,146</td><td class="center diff-cell"><span class="diff-down">▼ 2,631 (-38.8%)</span></td></tr>
-      <tr><td>유료 당일해지 (가입 대비)</td><td class="center">1,275 / (18.8%)</td><td class="center">821 / (19.8%)</td><td class="center diff-cell"><span class="diff-down">▼ 454</span> <span class="diff-up">▲ 1.0%p</span></td></tr>
-      <tr><td>유료 지연해지</td><td class="center">1,808</td><td class="center">1,963</td><td class="center diff-cell"><span class="diff-up">▲ 155 (+8.6%)</span></td></tr>
-      <tr><td>유료 누적**</td><td class="center">27,403</td><td class="center">28,765</td><td class="center diff-cell"><span class="diff-up">▲ 1,362 (+5.0%)</span></td></tr>
-      <tr class="group"><td colspan="4">SKT</td></tr>
-      <tr><td>당일 유료가입</td><td class="center">9,023</td><td class="center">5,900</td><td class="center diff-cell"><span class="diff-down">▼ 3,123 (-34.6%)</span></td></tr>
-      <tr><td>유료 당일해지 (가입 대비)</td><td class="center">2,464 / (27.3%)</td><td class="center">1,513 / (25.6%)</td><td class="center diff-cell"><span class="diff-down">▼ 951</span> <span class="diff-down">▼ 1.7%p</span></td></tr>
-      <tr><td>유료 지연해지</td><td class="center">1,571</td><td class="center">1,371</td><td class="center diff-cell"><span class="diff-down">▼ 200 (-12.7%)</span></td></tr>
-      <tr><td>유료 누적**</td><td class="center">19,197</td><td class="center">22,213</td><td class="center diff-cell"><span class="diff-up">▲ 3,016 (+15.7%)</span></td></tr>
+      <tr class="hl"><td>★ 파일 업로드 총 사용자</td><td class="center">22,140</td><td class="center">6,218</td><td class="center diff-cell"><span class="diff-down">▼ 15,922 (-71.9%)</span></td></tr>
+      <tr><td>LGU+ 당일 유료가입</td><td class="center">6,777</td><td class="center">4,146</td><td class="center diff-cell"><span class="diff-down">▼ 2,631 (-38.8%)</span></td></tr>
+      <tr><td>SKT 당일 유료가입</td><td class="center">9,023</td><td class="center">5,900</td><td class="center diff-cell"><span class="diff-down">▼ 3,123 (-34.6%)</span></td></tr>
     </tbody>
   </table>
   </div>
-  <p class="foot-note">**MAU는 각 기간 마지막 날 기준 최근 30일 활성 사용자(전주 10.14~11.12, 금주 10.21~11.19)이고, 유료 누적은 각 기간 마지막 날(11.12 / 11.19) 값입니다. 금주 DAU는 일 평균 약 4,800으로 전주(약 10,900)보다 낮고, 주중 5,000~6,000대로 비슷한 수준이 이어졌습니다. 화면별 합계는 평일 시트(총 사용자) + 주말 GA(활성 사용자) 기준입니다.</p>
+  <p class="foot-note">LGU+ 유료 누적 28,765 · SKT 유료 누적 22,213 (11.19 기준). DAU 감소 원인은 확인 전입니다. 일별 추이는 구글 시트 W47 탭에서 볼 수 있습니다.</p>
 
   <hr class="divider">
 
@@ -201,22 +143,33 @@
   <div class="goal-chip">목표 · 주간 보호앱 설정 전환수 상승 (N &gt; NN)</div>
   <div class="scroll">
   <table class="data">
-    <colgroup><col style="width:9%"><col style="width:20%"><col><col><col style="width:12%"><col style="width:36%"></colgroup>
-    <thead><tr><th>구분</th><th>측정지표</th><th class="center">주간<br><span style="font-weight:400">11.13~11.19</span></th><th class="center">누적</th><th class="center">상태</th><th>비고</th></tr></thead>
+    <colgroup><col style="width:8%"><col style="width:22%"><col style="width:12%"><col style="width:12%"><col style="width:12%"><col></colgroup>
+    <thead><tr><th>구분</th><th>측정지표</th><th class="center">주간<br><span style="font-weight:400">11.13~11.19</span></th><th class="center">누적</th><th class="center">상태</th><th>비고 · 관련 업무</th></tr></thead>
     <tbody>
-      <tr><td>전환</td><td>앱 다운로드 수</td><td class="center">–</td><td class="center">–</td><td class="center"><span class="st bad">측정 없음</span></td><td>GA 앱 스트림 이벤트 0건 · 앱 스토어 콘솔 확인 필요</td></tr>
-      <tr><td>전환</td><td>앱 가입 수</td><td class="center">964</td><td class="center">1,897</td><td class="center"><span class="st">정상</span></td><td>유료 가입 건수(어드민 LGU+ 집계) · 누적은 11.03~11.19 · SKT 가입 0</td></tr>
-      <tr class="hl"><td>전환</td><td>★ 보호앱 설정 수 (목표)</td><td class="center">–</td><td class="center">–</td><td class="center"><span class="st bad">측정 없음</span></td><td>측정 수단 없음 · 웹 보조 이벤트만 주간 1건</td></tr>
-      <tr><td>전환</td><td>가족 설정 수</td><td class="center">0</td><td class="center">0</td><td class="center"><span class="st bad">측정 없음</span></td><td>웹 이벤트가 11.03 이후 0건 · 서버 기록 확인 필요</td></tr>
+      <tr><td>전환</td><td>앱 다운로드 수</td><td class="center">–</td><td class="center">–</td><td class="center"><span class="st bad">측정 없음</span></td><td>GA 앱 스트림 0건 · 스토어 콘솔 확인 필요</td></tr>
+      <tr><td>전환</td><td>앱 가입 수</td><td class="center">964</td><td class="center">1,897</td><td class="center"><span class="st">정상</span></td><td>유료 가입(어드민 LGU+) · SKT 가입 0</td></tr>
+      <tr class="hl"><td>전환</td><td>★ 보호앱 설정 수 (목표)</td><td class="center">–</td><td class="center">–</td><td class="center"><span class="st bad">측정 없음</span></td><td>측정 수단 없음</td></tr>
+      <tr><td>전환</td><td>가족 설정 수</td><td class="center">0</td><td class="center">0</td><td class="center"><span class="st bad">측정 없음</span></td><td>웹 이벤트 11.03 이후 0건 · 서버 기록 확인 필요</td></tr>
     </tbody>
   </table>
   </div>
-  <p class="foot-note">LGU+ 오픈(10.29) 기준이며 SKT는 12월 출시 예정입니다. 앱 가입 수는 어드민 유료 가입의 일별 합이고, 어드민 「유료 누적」(남은 회원 수)과 다릅니다. 앱 다운로드·보호앱 설정·가족 설정은 측정 수단이 아직 없어 개발 확인이 필요합니다. 목표값(N &gt; NN)은 아직 정하지 않았습니다.</p>
+  <p class="foot-note">LGU+ 10.29 오픈 · SKT 12월 출시 예정 · 앱 가입 수 누적은 11.03~11.19</p>
 
   <hr class="divider">
 
-  <!-- 3 -->
-  <h2 class="section-title">3. 업무 시간 배분</h2>
+  <h2 class="section-title">3. 측정 이슈 · 요청</h2>
+  <table class="data">
+    <colgroup><col style="width:30%"><col></colgroup>
+    <tbody>
+      <tr><td>폰지킴 앱 지표</td><td>앱 다운로드·보호앱 설정·가족 설정 측정 수단 없음 → 개발 확인, 앱 스토어 콘솔 접근 필요</td></tr>
+      <tr><td>파일 업로드 완료 수</td><td>업로드 성공 여부 미포함 → 성공 분기 뒤로 이벤트 이동 개발 필요</td></tr>
+      <tr class="hl"><td>주소록 백업 설정 완료 수 (목표)</td><td>켬·끔 구분 정의 확정 필요 (on/off 파라미터 개발)</td></tr>
+    </tbody>
+  </table>
+
+  <hr class="divider">
+
+  <h2 class="section-title">4. 업무 시간 배분</h2>
   <div class="period-note">11.13(금) ~ 11.19(목) · 근무 4일(32시간) + 연차 1일(11.13)</div>
   <table class="data">
     <thead><tr><th>구분</th><th class="center">시간</th><th class="center">비중</th></tr></thead>
@@ -229,131 +182,25 @@
       <tr><td>합계</td><td class="center">40시간</td><td class="center">100%</td></tr>
     </tbody>
   </table>
-  <hr class="divider">
 
-  <!-- 4 -->
-  <h2 class="section-title">4. 스프린트별 지난주 성과 · 금주 계획</h2>
-  <div class="period-note">지난주 성과 = 11월 2주차 11.06(금)~11.12(목) · 금주 계획 = 11월 3주차 11.13(금)~11.19(목) 진행 업무 · 업무마다 JIRA 이슈로 연결</div>
-  <div class="sp">
-    <div class="sp-head"><span class="sp-no">SP1</span> 오피스도우미 연계 강화 10월 배포 <span class="st done">배포 완료</span> <span class="per">07.28 ~ 11.03</span></div>
-    <div class="sp-goal">오피스도우미 → 안심클라우드 유입 DAU <b>3,000 → 19,000</b> (진입 구좌 = 파일 업로드 화면, KPI 2만)</div>
-    <div class="scroll"><table class="sub l"><thead><tr><th style="width:42%">지난주 업무 (11월 2주차)</th><th style="width:20%">JIRA</th><th>봐야 하는 데이터</th></tr></thead><tbody>
-      <tr><td colspan="3" class="muted">지난주 진행 업무 없음</td></tr>
-    </tbody></table></div>
-    <div class="scroll"><table class="sub r"><thead><tr><th style="width:42%">금주 계획 (업무) (11월 3주차)</th><th>목표</th><th style="width:16%">목표 일정</th></tr></thead><tbody>
-      <tr><td>폴라리스에 관련 GA 요청 <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-1156" target="_blank">1156</a></td><td>유입 측정용 GA 확보</td><td>11.20</td></tr>
-    </tbody></table></div>
-  </div>
-  <div class="sp">
-    <div class="sp-head"><span class="sp-no">SP2</span> 오피스도우미 연계 강화 12월 배포 <span class="st ">진행중</span> <span class="per">09.14 ~ 12.16</span></div>
-    <div class="sp-goal">유입 DAU <b>19,000 → 40,000</b> (자동저장 20,000 + 보안 공유 1,000)</div>
-    <div class="scroll"><table class="sub l"><thead><tr><th style="width:42%">지난주 업무 (11월 2주차)</th><th style="width:20%">JIRA</th><th>봐야 하는 데이터</th></tr></thead><tbody>
-      <tr><td>12월 버전 TC 작성 — 11.06 <span class="st done">완료</span></td><td><a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-619" target="_blank">619</a></td><td>—</td></tr>
-      <tr><td>12월 배포 디자인 화면 아톤 전달 — 11.09 <span class="st done">완료</span></td><td><a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-980" target="_blank">980</a></td><td>—</td></tr>
-      <tr><td>통합 약관 메일 작성·전달 — 11.10 <span class="st done">완료</span></td><td><a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-1014" target="_blank">1014</a></td><td>—</td></tr>
-      <tr><td>아톤 QA 요청사항 메일 검토·회신 — 11.11 <span class="st done">완료</span></td><td><a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-1023" target="_blank">1023</a></td><td>—</td></tr>
-      <tr><td>자동 저장에 따른 가입 약관 검토 — 11.12 <span class="st done">완료</span></td><td><a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-945" target="_blank">945</a></td><td>—</td></tr>
-    </tbody></table></div>
-    <div class="scroll"><table class="sub r"><thead><tr><th style="width:42%">금주 계획 (업무) (11월 3주차)</th><th>목표</th><th style="width:16%">목표 일정</th></tr></thead><tbody>
-      <tr><td>개인정보처리방침 업데이트 및 사용자 고지 작성(자동 저장 기능) <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-977" target="_blank">977</a></td><td>자동 저장 시행 전 고지 준비</td><td>12.16</td></tr>
-      <tr><td>12월 배포 아톤 결함 대응</td><td>12월 배포 결함 해소</td><td>11.20</td></tr>
-    </tbody></table></div>
-  </div>
-  <div class="sp">
-    <div class="sp-head"><span class="sp-no">SP3</span> 폴라리스 스마트 스캐너 대응 <span class="st ">진행중</span> <span class="per">10.21 ~ 2027.03.31</span></div>
-    <div class="sp-goal">스캐너 신규 이용자의 안심클라우드 전환 (정량 KR은 시나리오 확정 후 설정)</div>
-    <div class="scroll"><table class="sub l"><thead><tr><th style="width:42%">지난주 업무 (11월 2주차)</th><th style="width:20%">JIRA</th><th>봐야 하는 데이터</th></tr></thead><tbody>
-      <tr><td>폴라리스 스마트 스캐너 메일 점검·회신 — 11.06 <span class="st done">완료</span></td><td><a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-906" target="_blank">906</a></td><td>—</td></tr>
-      <tr><td>연계 상세 시나리오·flow chart 업데이트 — 11.12 <span class="st done">완료</span></td><td><a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-618" target="_blank">618</a></td><td>정량 KR 미정</td></tr>
-    </tbody></table></div>
-    <div class="scroll"><table class="sub r"><thead><tr><th style="width:42%">금주 계획 (업무) (11월 3주차)</th><th>목표</th><th style="width:16%">목표 일정</th></tr></thead><tbody>
-      <tr><td>스마트 스캐너 관련 폴라리스 사전 미팅 <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-1075" target="_blank">1075</a> <span class="st done">완료</span></td><td>스캐너 연계 방향 협의</td><td>11.19</td></tr>
-    </tbody></table></div>
-  </div>
-  <div class="sp">
-    <div class="sp-head"><span class="sp-no">SP4</span> 안심클라우드 쿠폰 연동 <span class="st done">쿠폰 배포 완료</span> <span class="per">10.21 ~ 11.18</span></div>
-    <div class="sp-goal">월 5천원 한도 쿠폰으로 유료 고객 혜택 체감 (정량 KR 설정 예정)</div>
-    <div class="scroll"><table class="sub l"><thead><tr><th style="width:42%">지난주 업무 (11월 2주차)</th><th style="width:20%">JIRA</th><th>봐야 하는 데이터</th></tr></thead><tbody>
-      <tr><td>쿠폰 배포 내용 통신사 소통 — 11.06 </td><td><a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-932" target="_blank">932</a></td><td>쿠폰 신청 고객 수 (배포 후 측정)</td></tr>
-      <tr><td>상용 쿠폰 QA </td><td><a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-1050" target="_blank">1050</a></td><td>—</td></tr>
-    </tbody></table></div>
-    <div class="scroll"><table class="sub r"><thead><tr><th style="width:42%">금주 계획 (업무) (11월 3주차)</th><th>목표</th><th style="width:16%">목표 일정</th></tr></thead><tbody>
-      <tr><td>쿠폰 배포 일정 논의 후 배포 <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-932" target="_blank">932</a> <span class="st done">완료</span></td><td>유료 고객 혜택 체감 · 쿠폰 신청 고객 확보</td><td>11.16</td></tr>
-      <tr><td>상용 쿠폰 QA <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-1050" target="_blank">1050</a> <span class="st done">완료</span></td><td>상용 쿠폰 발급 정상 확인</td><td>11.16</td></tr>
-    </tbody></table></div>
-  </div>
-  <div class="sp">
-    <div class="sp-head"><span class="sp-no">SP5</span> 안심클라우드 특약 보험(DB손해보험) <span class="st ">진행중</span> <span class="per">10.21 ~ 미정</span></div>
-    <div class="sp-goal">데이터 소실 대비 단체보험 적용 (정량 KR 설정 예정)</div>
-    <div class="scroll"><table class="sub l"><thead><tr><th style="width:42%">지난주 업무 (11월 2주차)</th><th style="width:20%">JIRA</th><th>봐야 하는 데이터</th></tr></thead><tbody>
-      <tr><td colspan="3" class="muted">지난주 진행 업무 없음</td></tr>
-    </tbody></table></div>
-    <div class="scroll"><table class="sub r"><thead><tr><th style="width:42%">금주 계획 (업무) (11월 3주차)</th><th>목표</th><th style="width:16%">목표 일정</th></tr></thead><tbody>
-      <tr><td>DB손해보험 계약 추진 <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-402" target="_blank">402</a></td><td>단체보험 적용 · 계약 체결</td><td>11.27</td></tr>
-    </tbody></table></div>
-  </div>
-  <div class="sp">
-    <div class="sp-head"><span class="sp-no">SP6</span> 안심클라우드 × 오피스도우미 공동 프로모션 <span class="st ">진행중</span> <span class="per">10.26 ~ 11.13</span></div>
-    <div class="sp-goal">기본 플랜으로 모자란 유입 DAU를 공동 프로모션으로 보완 (KPI 2만)</div>
-    <div class="scroll"><table class="sub l"><thead><tr><th style="width:42%">지난주 업무 (11월 2주차)</th><th style="width:20%">JIRA</th><th>봐야 하는 데이터</th></tr></thead><tbody>
-      <tr><td colspan="3" class="muted">지난주 진행 업무 없음</td></tr>
-    </tbody></table></div>
-    <div class="scroll"><table class="sub r"><thead><tr><th style="width:42%">금주 계획 (업무) (11월 3주차)</th><th>목표</th><th style="width:16%">목표 일정</th></tr></thead><tbody>
-      <tr><td colspan="3" class="muted">금주 진행 업무 없음</td></tr>
-    </tbody></table></div>
-  </div>
-  <div class="sp">
-    <div class="sp-head"><span class="sp-no">SP7</span> LGU+ 개인정보 제3자 제공 동의 약관 점검 <span class="st done">약관 반영 완료</span> <span class="per">10.30 ~ 11.18</span></div>
-    <div class="sp-goal">제3자 제공 항목을 PASS 제공 항목과 일치 + 기존 고객 재동의 안내</div>
-    <div class="scroll"><table class="sub l"><thead><tr><th style="width:42%">지난주 업무 (11월 2주차)</th><th style="width:20%">JIRA</th><th>봐야 하는 데이터</th></tr></thead><tbody>
-      <tr><td colspan="3" class="muted">지난주 진행 업무 없음</td></tr>
-    </tbody></table></div>
-    <div class="scroll"><table class="sub r"><thead><tr><th style="width:42%">금주 계획 (업무) (11월 3주차)</th><th>목표</th><th style="width:16%">목표 일정</th></tr></thead><tbody>
-      <tr><td>LGU+ MVNO 개인정보 제3자 제공 동의 약관 <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-795" target="_blank">795</a> <span class="st done">완료</span></td><td>약관 반영 · 재동의 공지 완료</td><td>11.18</td></tr>
-      <tr><td>폰지킴 LGU+ 및 LGU+ MVNO 개인정보 제3자 제공 동의 약관 수정 및 반영 <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-1159" target="_blank">1159</a></td><td>폰지킴 약관 반영</td><td>12.02</td></tr>
-    </tbody></table></div>
-  </div>
-  <div class="sp">
-    <div class="sp-head"><span class="sp-no">SP9</span> 외부 가입 완료 후 주소록 동기화 처리 <span class="st ">진행중</span> <span class="per">11.09 ~ 11.20</span></div>
-    <div class="sp-goal">외부 가입 완료 후 주소록 동기화까지 이어지는 가입 흐름 완성 (정량 KR 설정 예정)</div>
-    <div class="scroll"><table class="sub l"><thead><tr><th style="width:42%">지난주 업무 (11월 2주차)</th><th style="width:20%">JIRA</th><th>봐야 하는 데이터</th></tr></thead><tbody>
-      <tr><td>활성화 전략 기획서 업데이트 · 화면 기획서 작성 — 11.06 <span class="st done">완료</span></td><td><a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-864" target="_blank">864</a></td><td>당일해지율(6일 기준) LGU+ <b>14.8% → 18.5%</b> · SKT <b>27.4% → 27.2%</b> / 지연해지 LGU+ 1,660 → 1,454 · SKT 1,135 → 1,319 (전주 → 금주)</td></tr>
-      <tr><td>기획서 작성 — 11.09~11.10 <span class="st done">완료</span></td><td><a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-1010" target="_blank">1010</a></td><td>—</td></tr>
-      <tr><td>기획 리뷰 · 기획서 업데이트 — 11.12 </td><td><a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-1009" target="_blank">1009</a></td><td>—</td></tr>
-      <tr><td>외부가입 완료 후 주소록 동기화 QA </td><td><a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-1057" target="_blank">1057</a> · <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-1056" target="_blank">1056</a></td><td>—</td></tr>
-    </tbody></table></div>
-    <div class="scroll"><table class="sub r"><thead><tr><th style="width:42%">금주 계획 (업무) (11월 3주차)</th><th>목표</th><th style="width:16%">목표 일정</th></tr></thead><tbody>
-      <tr><td>외부가입 완료 후 주소록 동기화 검수 QA <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-1057" target="_blank">1057</a> <span class="st done">완료</span></td><td>주소록 동기화 정상 동작 확인</td><td>11.18</td></tr>
-      <tr><td>상용 배포 및 상용 QA <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-1056" target="_blank">1056</a> · <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-1009" target="_blank">1009</a></td><td>상용 반영 후 정상 동작 확인</td><td>11.20</td></tr>
-    </tbody></table></div>
-  </div>
-  <div class="sp">
-    <div class="sp-head"><span class="sp-no">GA</span> GA 세팅 — 안심클라우드 · 폰지킴 <span class="st ">진행중</span></div>
-    <div class="sp-goal">화면별 지표 측정 체계 정비 (GA 값 검토)</div>
-    <div class="scroll"><table class="sub l"><thead><tr><th style="width:42%">지난주 업무 (11월 2주차)</th><th style="width:20%">JIRA</th><th>봐야 하는 데이터</th></tr></thead><tbody>
-      <tr><td colspan="3" class="muted">지난주 진행 업무 없음</td></tr>
-    </tbody></table></div>
-    <div class="scroll"><table class="sub r"><thead><tr><th style="width:42%">금주 계획 (업무) (11월 3주차)</th><th>목표</th><th style="width:16%">목표 일정</th></tr></thead><tbody>
-      <tr><td>안심클라우드 GA 세팅 <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-1133" target="_blank">1133</a> · 폰지킴 GA 세팅 <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-1134" target="_blank">1134</a></td><td>화면별 지표 측정 체계 확보 · GA 값 검토</td><td>미정</td></tr>
-    </tbody></table></div>
-  </div>
-  <div class="sp">
-    <div class="sp-head"><span class="sp-no">운영</span> 서비스 운영 — 안심클라우드 <span class="st ">상시</span></div>
-    <div class="sp-goal">통신사 문의 대응, 정책 변경 대응, 가입 화면 개선</div>
-    <div class="scroll"><table class="sub l"><thead><tr><th style="width:42%">지난주 업무 (11월 2주차)</th><th style="width:20%">JIRA</th><th>봐야 하는 데이터</th></tr></thead><tbody>
-      <tr><td>LGU+ PASS앱 내 일반 부가서비스 소개 자료 전달 — 11.06 <span class="st done">완료</span></td><td>—</td><td>—</td></tr>
-      <tr><td>LGU+ 부가서비스 가입안내 문자 점검 메일 검토 — 11.10 <span class="st done">완료</span></td><td><a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-1001" target="_blank">1001</a></td><td>—</td></tr>
-      <tr><td>SKT 제휴부가서비스 광고 메시지 점검 회신 — 11.10 <span class="st done">완료</span></td><td><a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-944" target="_blank">944</a></td><td>—</td></tr>
-      <tr><td>LGU+ 박은영 책임님 문의 회신 — 11.10 · SKT 정석원 매니저 문의 회신 — 11.12 <span class="st done">완료</span></td><td>—</td><td>—</td></tr>
-      <tr><td>기획팀 주간보고서 고도화 — 11.11 <span class="st done">완료</span></td><td><a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-1015" target="_blank">1015</a></td><td>—</td></tr>
-    </tbody></table></div>
-    <div class="scroll"><table class="sub r"><thead><tr><th style="width:42%">금주 계획 (업무) (11월 3주차)</th><th>목표</th><th style="width:16%">목표 일정</th></tr></thead><tbody>
-      <tr><td>외부 가입 완료 화면 SKT용 PASS 이동 버튼 추가 <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-869" target="_blank">869</a> <span class="st done">완료</span></td><td>SKT 가입 후 PASS 이동 개선</td><td>11.16</td></tr>
-      <tr><td>LGU+·SKT 11월 월간 문자 발송 <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-1110" target="_blank">1110</a> <span class="st done">완료</span></td><td>월간 문자 발송</td><td>11.19</td></tr>
-      <tr><td>유료가입자 현황 공유 (매주 영업일 첫날) <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-1116" target="_blank">1116</a></td><td>LGU+ 유료 가입자 현황 정기 전달</td><td>매주 영업일 첫날</td></tr>
-      <tr><td>방미통위 자료 제출 — SKT <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-1163" target="_blank">1163</a> · LGU+ <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-1166" target="_blank">1166</a></td><td>방미통위 제출 자료 작성·점검</td><td>SKT 11.19 · LGU+ 11.23</td></tr>
-      <tr><td>통신사 문의 대응 — LGU+ 김경운 책임님(11.17) · 박은영 책임님(11.18·11.19), SKT 정석원 매니저님(11.19)</td><td>통신사 문의 대응</td><td>11.17 ~ 11.23</td></tr>
-    </tbody></table></div>
+  <h2 class="section-title">5. 스프린트별 지난주 · 금주</h2>
+  <div class="period-note">지난주 = 11월 2주차(11.06~11.12) · 금주 = 11월 3주차(11.13~11.19) · 업무마다 JIRA 연결</div>
+  <div class="scroll">
+  <table class="data">
+    <colgroup><col style="width:22%"><col><col></colgroup>
+    <thead><tr><th>스프린트</th><th>지난주 업무</th><th>금주 업무 · 일정</th></tr></thead>
+    <tbody>
+      <tr><td><b>SP1</b> 오피스도우미 10월 배포<br><span class="muted" style="font-size:12px">유입 DAU 3,000 → 19,000</span></td><td><span class="muted">–</span></td><td>· 폴라리스 GA 요청 <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-1156" target="_blank">1156</a> · 11.20</td></tr>
+      <tr><td><b>SP2</b> 오피스도우미 12월 배포<br><span class="muted" style="font-size:12px">유입 DAU 19,000 → 40,000</span></td><td>· 12월 TC 작성 <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-619" target="_blank">619</a> <span class="st done">완료</span><br>· 디자인 화면 아톤 전달 <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-980" target="_blank">980</a> <span class="st done">완료</span><br>· 통합 약관 메일 <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-1014" target="_blank">1014</a> <span class="st done">완료</span><br>· 아톤 QA 요청 회신 <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-1023" target="_blank">1023</a> <span class="st done">완료</span><br>· 자동 저장 가입 약관 검토 <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-945" target="_blank">945</a> <span class="st done">완료</span></td><td>· 개인정보처리방침·고지 작성 <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-977" target="_blank">977</a> · 12.16<br>· 아톤 결함 대응 · 11.20</td></tr>
+      <tr><td><b>SP3</b> 폴라리스 스마트 스캐너<br><span class="muted" style="font-size:12px">스캐너 이용자 전환</span></td><td>· 메일 점검·회신 <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-906" target="_blank">906</a> <span class="st done">완료</span><br>· 상세 시나리오·flow chart <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-618" target="_blank">618</a> <span class="st done">완료</span></td><td>· 폴라리스 사전 미팅 <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-1075" target="_blank">1075</a> <span class="st done">완료</span> 11.19</td></tr>
+      <tr><td><b>SP4</b> 안심클라우드 쿠폰 연동<br><span class="muted" style="font-size:12px">유료 고객 혜택 체감</span></td><td>· 쿠폰 배포 통신사 소통 <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-932" target="_blank">932</a><br>· 상용 쿠폰 QA <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-1050" target="_blank">1050</a></td><td>· 쿠폰 배포 <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-932" target="_blank">932</a> <span class="st done">완료</span> 11.16<br>· 상용 쿠폰 QA <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-1050" target="_blank">1050</a> <span class="st done">완료</span> 11.16</td></tr>
+      <tr><td><b>SP5</b> 특약 보험(DB손해보험)<br><span class="muted" style="font-size:12px">데이터 소실 대비</span></td><td><span class="muted">–</span></td><td>· DB손해보험 계약 추진 <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-402" target="_blank">402</a> · 11.27</td></tr>
+      <tr><td><b>SP7</b> LGU+ 개인정보 제3자 제공 동의 약관<br><span class="muted" style="font-size:12px">약관 일치 · 재동의 안내</span></td><td><span class="muted">–</span></td><td>· LGU+ MVNO 약관 <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-795" target="_blank">795</a> <span class="st done">완료</span> 11.18<br>· 폰지킴 약관 수정·반영 <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-1159" target="_blank">1159</a> · 12.02</td></tr>
+      <tr><td><b>SP9</b> 외부 가입 완료 후 주소록 동기화<br><span class="muted" style="font-size:12px">가입 흐름 완성 · 미사용 고객 활성화 기획 포함</span></td><td>· 활성화 전략·화면 기획서 <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-864" target="_blank">864</a> <span class="st done">완료</span><br>· 기획서 작성 <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-1010" target="_blank">1010</a> <span class="st done">완료</span><br>· 기획 리뷰 <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-1009" target="_blank">1009</a><br>· 동기화 QA <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-1057" target="_blank">1057</a> <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-1056" target="_blank">1056</a></td><td>· 검수 QA <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-1057" target="_blank">1057</a> <span class="st done">완료</span> 11.18<br>· 상용 배포·상용 QA <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-1056" target="_blank">1056</a> · 11.20</td></tr>
+      <tr><td><b>GA</b> GA 세팅<br><span class="muted" style="font-size:12px">지표 측정 체계 확보</span></td><td><span class="muted">–</span></td><td>· 안심클라우드 <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-1133" target="_blank">1133</a> · 폰지킴 <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-1134" target="_blank">1134</a> · 미정</td></tr>
+      <tr><td><b>운영</b> 서비스 운영<br><span class="muted" style="font-size:12px">통신사 요청 대응</span></td><td>· LGU+ 소개 자료 전달 · 문자 점검 <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-1001" target="_blank">1001</a> · SKT 광고 문구 점검 <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-944" target="_blank">944</a> · 문의 회신<br>· 주간보고서 고도화 <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-1015" target="_blank">1015</a> <span class="st done">완료</span></td><td>· SKT PASS 이동 버튼 <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-869" target="_blank">869</a> <span class="st done">완료</span><br>· 월간 문자 발송 <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-1110" target="_blank">1110</a> <span class="st done">완료</span><br>· 유료가입자 현황 공유 <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-1116" target="_blank">1116</a><br>· 방미통위 자료 SKT <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-1163" target="_blank">1163</a> · LGU+ <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-1166" target="_blank">1166</a> · 11.23<br>· 통신사 문의 대응</td></tr>
+    </tbody>
+  </table>
   </div>
 
   <p class="foot-note">일일 업무 기록은 구글 시트 「일일 업무 보고_최경진」 2026-W46·W47 탭에서 볼 수 있습니다. 목표 일정은 JIRA 기한 기준입니다.</p>

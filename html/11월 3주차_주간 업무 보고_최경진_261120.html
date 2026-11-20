@@ -77,6 +77,9 @@
   table.sub td { vertical-align: top; padding: 7px 12px; border-top: 1px solid var(--line); word-break: keep-all; overflow-wrap: break-word; }
   table.sub td.muted { color: #a0a7b3; }
   .sp .scroll + .scroll table { border-top: 2px solid var(--line); }
+  .st.warn { background: rgba(220,140,0,.15); color: #b86e00; }
+  .st.bad { background: rgba(200,50,60,.14); color: #d0404f; }
+  .goal-chip { display: inline-block; margin: 2px 0 10px; padding: 4px 12px; border-radius: 10px; background: var(--accent-soft); color: var(--accent); font-weight: 700; font-size: 13px; }
 </style>
 </head>
 <body>
@@ -99,8 +102,27 @@
 
   <!-- 1 -->
   <h2 class="section-title">1. 안심클라우드 핵심 지표</h2>
+  <h3 class="sub-title">측정 지표 — 주간 · 누적</h3>
+  <div class="goal-chip">목표 · 주간 주소록 백업 설정 완료 전환수 상승 (N &gt; NN)</div>
+  <div class="scroll">
+  <table class="data">
+    <colgroup><col style="width:9%"><col style="width:20%"><col><col><col style="width:12%"><col style="width:36%"></colgroup>
+    <thead><tr><th>구분</th><th>측정지표</th><th class="center">주간<br><span style="font-weight:400">11.13~11.19</span></th><th class="center">누적</th><th class="center">상태</th><th>비고</th></tr></thead>
+    <tbody>
+      <tr><td>유입</td><td>전체 MAU</td><td class="center">32,622</td><td class="center">188,174</td><td class="center"><span class="st warn">보정 필요</span></td><td>활성 사용자, 운영 호스트만 집계 · 누적은 11.01~11.19 (신규 비율 95.4%)</td></tr>
+      <tr><td>전환</td><td>파일 업로드 완료 수</td><td class="center">3,519</td><td class="center">258,300</td><td class="center"><span class="st warn">보정 필요</span></td><td>업로드 시도 후 콜백 도달 수 (성공 여부 미포함)</td></tr>
+      <tr><td>전환</td><td>자동백업 설정 완료 수</td><td class="center">6</td><td class="center">133</td><td class="center"><span class="st">정상</span></td><td>스마트 자동 업로드 설정 저장 · 주간 6명 수준</td></tr>
+      <tr class="hl"><td>전환</td><td>★ 주소록 백업 설정 완료 수 (목표)</td><td class="center">58</td><td class="center">1,315</td><td class="center"><span class="st warn">보정 필요</span></td><td>켠 경우와 끈 경우가 섞였을 수 있음 · 정의 확정 필요</td></tr>
+      <tr><td>전환</td><td>분실 감지 백업 설정 완료 수</td><td class="center">0</td><td class="center">1</td><td class="center"><span class="st warn">보정 필요</span></td><td>이벤트는 수집되나 설정한 고객이 거의 없음</td></tr>
+      <tr><td>전환</td><td>통합 클라우드 연결 고객 수</td><td class="center">163</td><td class="center">3,375</td><td class="center"><span class="st">정상</span></td><td>구글드라이브 · 원드라이브 · 드롭박스 연동 완료</td></tr>
+      <tr><td>전환</td><td>공유 완료 수</td><td class="center">110</td><td class="center">7,346</td><td class="center"><span class="st warn">보정 필요</span></td><td>공유 링크 생성 기준 (수신자 열람 미포함)</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="foot-note">GA4 이벤트 사용자(총 사용자) 기준이며, 누적은 GA 유효 데이터 시작일(06.24)~11.19입니다. 전체 MAU만 활성 사용자 · 운영 호스트 필터 기준이라 아래 일별 추이의 MAU(총 사용자, 11.19 189,741)와 값이 다릅니다. 목표값(N &gt; NN)은 아직 정하지 않았습니다.</p>
+
   <h3 class="sub-title">일별 추이</h3>
-  <div class="period-note">11.06(금) ~ 11.12(목) · 주말(11.14·11.15) 포함 7일 · 11.13 연차 · ★ = 오피스도우미 → 안심클라우드 유입 구좌(DAU 2만 목표)</div>
+  <div class="period-note">11.13(금) ~ 11.19(목) · 주말(11.14·11.15) 포함 7일 · 11.13 연차 · ★ = 오피스도우미 → 안심클라우드 유입 구좌(DAU 2만 목표)</div>
   <div class="scroll">
   <table class="data wide">
     <colgroup><col class="item"><col><col><col><col><col><col><col><col></colgroup>
@@ -175,8 +197,26 @@
 
   <hr class="divider">
 
+  <h2 class="section-title">2. 휴대폰 분실 피해 방지(폰지킴) 핵심 지표</h2>
+  <div class="goal-chip">목표 · 주간 보호앱 설정 전환수 상승 (N &gt; NN)</div>
+  <div class="scroll">
+  <table class="data">
+    <colgroup><col style="width:9%"><col style="width:20%"><col><col><col style="width:12%"><col style="width:36%"></colgroup>
+    <thead><tr><th>구분</th><th>측정지표</th><th class="center">주간<br><span style="font-weight:400">11.13~11.19</span></th><th class="center">누적</th><th class="center">상태</th><th>비고</th></tr></thead>
+    <tbody>
+      <tr><td>전환</td><td>앱 다운로드 수</td><td class="center">–</td><td class="center">–</td><td class="center"><span class="st bad">측정 없음</span></td><td>GA 앱 스트림 이벤트 0건 · 앱 스토어 콘솔 확인 필요</td></tr>
+      <tr><td>전환</td><td>앱 가입 수</td><td class="center">964</td><td class="center">1,897</td><td class="center"><span class="st">정상</span></td><td>유료 가입 건수(어드민 LGU+ 집계) · 누적은 11.03~11.19 · SKT 가입 0</td></tr>
+      <tr class="hl"><td>전환</td><td>★ 보호앱 설정 수 (목표)</td><td class="center">–</td><td class="center">–</td><td class="center"><span class="st bad">측정 없음</span></td><td>측정 수단 없음 · 웹 보조 이벤트만 주간 1건</td></tr>
+      <tr><td>전환</td><td>가족 설정 수</td><td class="center">0</td><td class="center">0</td><td class="center"><span class="st bad">측정 없음</span></td><td>웹 이벤트가 11.03 이후 0건 · 서버 기록 확인 필요</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="foot-note">LGU+ 오픈(10.29) 기준이며 SKT는 12월 출시 예정입니다. 앱 가입 수는 어드민 유료 가입의 일별 합이고, 어드민 「유료 누적」(남은 회원 수)과 다릅니다. 앱 다운로드·보호앱 설정·가족 설정은 측정 수단이 아직 없어 개발 확인이 필요합니다. 목표값(N &gt; NN)은 아직 정하지 않았습니다.</p>
+
+  <hr class="divider">
+
   <!-- 3 -->
-  <h2 class="section-title">2. 업무 시간 배분</h2>
+  <h2 class="section-title">3. 업무 시간 배분</h2>
   <div class="period-note">11.13(금) ~ 11.19(목) · 근무 4일(32시간) + 연차 1일(11.13)</div>
   <table class="data">
     <thead><tr><th>구분</th><th class="center">시간</th><th class="center">비중</th></tr></thead>
@@ -192,7 +232,7 @@
   <hr class="divider">
 
   <!-- 4 -->
-  <h2 class="section-title">3. 스프린트별 지난주 성과 · 금주 계획</h2>
+  <h2 class="section-title">4. 스프린트별 지난주 성과 · 금주 계획</h2>
   <div class="period-note">지난주 성과 = 11월 2주차 11.06(금)~11.12(목) · 금주 계획 = 11월 3주차 11.13(금)~11.19(목) 진행 업무 · 업무마다 JIRA 이슈로 연결</div>
   <div class="sp">
     <div class="sp-head"><span class="sp-no">SP1</span> 오피스도우미 연계 강화 10월 배포 <span class="st done">배포 완료</span> <span class="per">07.28 ~ 11.03</span></div>

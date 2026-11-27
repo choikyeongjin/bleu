@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>기획팀 주간보고 — 안심클라우드 · 휴대폰 분실 피해 방지</title>
+<style>
+  :root {
+    --ink: #1f2430;
+    --sub: #5b6472;
+    --line: #e3e6ec;
+    --bg: #f6f7f9;
+    --card: #ffffff;
+    --accent: #2f5fd6;
+    --accent-soft: #ecf1fd;
+    --good: #1a8f5e;
+    --good-soft: #e9f7f0;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 32px 20px 80px;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Malgun Gothic", "맑은 고딕", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", sans-serif;
+    line-height: 1.65;
+  }
+  .wrap { max-width: 860px; margin: 0 auto; }
+  header.doc-head { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 18px 22px; margin-bottom: 14px; }
+  .doc-category { font-size: 12px; font-weight: 700; color: var(--accent); letter-spacing: 0.06em; }
+  h1 { margin: 6px 0 0; font-size: 23px; }
+  table.props { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 12.5px; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; margin-bottom: 18px; background: var(--card); }
+  table.props th, table.props td { border-bottom: 1px solid var(--line); border-right: 1px solid var(--line); padding: 5px 10px; text-align: left; vertical-align: top; }
+  table.props th:last-child, table.props td:last-child { border-right: none; }
+  table.props tr:last-child td, table.props tr:last-child th { border-bottom: none; }
+  table.props th { background: var(--accent-soft); color: var(--accent); font-weight: 700; width: 120px; font-size: 11.5px; }
+  h2.section-title { font-size: 16px; margin: 26px 0 10px; padding-bottom: 6px; border-bottom: 2px solid var(--ink); }
+  h3.sub-title { font-size: 13.5px; margin: 14px 0 6px; color: var(--ink); }
+  .period-note { font-size: 12.5px; color: var(--sub); margin: -4px 0 8px; }
+  hr.divider { border: none; border-top: 1px solid var(--line); margin: 18px 0; }
+  .scroll { width: 100%; overflow-x: auto; }
+  table.data { width: 100%; table-layout: fixed; border-collapse: separate; border-spacing: 0; font-size: 12.5px; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; margin-top: 4px; background: var(--card); }
+  table.data.wide { min-width: 760px; }
+  table.data th, table.data td { border-bottom: 1px solid var(--line); border-right: 1px solid var(--line); padding: 6px 10px; text-align: left; vertical-align: top; word-break: keep-all; overflow-wrap: break-word; }
+  table.data th:last-child, table.data td:last-child { border-right: none; }
+  table.data tr:last-child td { border-bottom: none; }
+  table.data th { background: var(--accent-soft); color: var(--accent); font-weight: 700; font-size: 11.5px; }
+  table.data tbody tr:nth-child(even) { background: #fafafb; }
+  table.data td.center, table.data th.center { text-align: center; font-size: 11.5px; white-space: nowrap; }
+  table.data td.muted { color: #a0a7b3; }
+  table.data tr.group td { background: #f1f3f7; font-weight: 700; font-size: 11.5px; color: var(--sub); }
+  table.data col.item { width: 150px; }
+  ul.plain, ol.plain { margin: 4px 0 0; padding-left: 18px; font-size: 12.5px; }
+  ul.plain li, ol.plain li { margin-bottom: 3px; }
+  .group-label { font-size: 11.5px; font-weight: 700; color: var(--accent); margin: 10px 0 2px; }
+  .week-block { border: 1px solid var(--line); border-radius: 8px; padding: 10px 14px 12px; margin-bottom: 10px; background: var(--card); }
+  .status-pill { display: inline-block; font-size: 11.5px; font-weight: 700; padding: 2px 9px; border-radius: 999px; background: var(--good-soft); color: var(--good); }
+  .status-pill.done { background: var(--accent-soft); color: var(--accent); }
+  .diff-up { color: #c23b3b; font-weight: 700; }
+  .diff-down { color: #2f5fd6; font-weight: 700; }
+  table.data td.diff-cell { font-size: 11.5px; }
+  .foot-note { font-size: 11.5px; color: var(--sub); margin: 4px 0 0; }
+  a { color: var(--accent); }
+  tr.hl td { background: #fff4d6 !important; font-weight: 700; }
+  tr.hl td:first-child { border-left: 4px solid #e8a400; }
+  .sp { border: 1px solid var(--line); border-radius: 10px; background: var(--card); margin: 0 0 14px; overflow: hidden; }
+  .sp-head { padding: 9px 14px 2px; font-size: 14px; font-weight: 700; }
+  .sp-no { display: inline-block; background: var(--ink); color: #fff; font-size: 11px; padding: 1px 8px; border-radius: 6px; margin-right: 4px; }
+  .sp-head .per { font-size: 11.5px; color: var(--sub); font-weight: 400; margin-left: 4px; }
+  .sp-goal { padding: 0 14px 8px; font-size: 12px; color: var(--sub); }
+  .st { display: inline-block; font-size: 11px; font-weight: 700; padding: 1px 8px; border-radius: 999px; background: var(--good-soft); color: var(--good); }
+  .st.done { background: var(--accent-soft); color: var(--accent); }
+  table.sub { width: 100%; min-width: 560px; table-layout: fixed; border-collapse: collapse; font-size: 12.5px; border-top: 1px solid var(--line); }
+  table.sub th { text-align: left; padding: 6px 12px; font-size: 11.5px; }
+  table.sub.l th { background: var(--accent-soft); color: var(--accent); }
+  table.sub.r th { background: var(--good-soft); color: var(--good); }
+  table.sub td { vertical-align: top; padding: 7px 12px; border-top: 1px solid var(--line); word-break: keep-all; overflow-wrap: break-word; }
+  table.sub td.muted { color: #a0a7b3; }
+  .sp .scroll + .scroll table { border-top: 2px solid var(--line); }
+  .st.warn { background: rgba(220,140,0,.15); color: #b86e00; }
+  .st.bad { background: rgba(200,50,60,.14); color: #d0404f; }
+  .goal-chip { display: inline-block; margin: 2px 0 10px; padding: 4px 12px; border-radius: 10px; background: var(--accent-soft); color: var(--accent); font-weight: 700; font-size: 13px; }
+  code { font-family: Consolas, monospace; font-size: 12px; background: #f1f3f7; padding: 1px 5px; border-radius: 4px; color: #3b4558; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="doc-head">
+    <div class="doc-category">기획팀 주간보고</div>
+    <h1>기획팀 주간보고</h1>
+  </header>
+
+  <table class="props">
+    <tbody>
+      <tr><th>이름 직급</th><td>최경진 매니저</td></tr>
+      <tr><th>보고 주간</th><td>2026.11.20(금) ~ 2026.11.26(목)</td></tr>
+      <tr><th>담당 업무</th><td>안심클라우드 / 휴대폰 분실 피해 방지(폰지킴) / 서비스운영</td></tr>
+      <tr><th>KPI 목표</th><td>안심클라우드 <b>MAU 60만 · DAU 2~4만</b></td></tr>
+    </tbody>
+  </table>
+
+
+  <!-- 1 -->
+  <h2 class="section-title">1. 이번 주 KPI 한눈에</h2>
+  <div class="period-note">금주 11.20~11.26 vs 전주 11.13~11.19 · 7일(주말 포함) · MAU는 각 주 마지막 날 기준 최근 30일</div>
+  <div class="scroll">
+  <table class="data">
+    <colgroup><col style="width:12%"><col style="width:26%"><col style="width:14%"><col style="width:14%"><col style="width:14%"><col></colgroup>
+    <thead><tr><th>서비스</th><th>KPI</th><th class="center">목표</th><th class="center">금주</th><th class="center">전주</th><th class="center">증감</th></tr></thead>
+    <tbody>
+      <tr><td>안심클라우드</td><td>MAU (최근 30일)</td><td class="center">60만</td><td class="center">275,158</td><td class="center">343,047</td><td class="center diff-cell"><span class="diff-down">▼ 19.8%</span></td></tr>
+      <tr><td>안심클라우드</td><td>DAU (일평균)</td><td class="center">2~4만</td><td class="center">4,584</td><td class="center">4,866</td><td class="center diff-cell"><span class="diff-down">▼ 5.8%</span></td></tr>
+      <tr class="hl"><td>안심클라우드</td><td>★ 주소록 백업 설정 완료 수</td><td class="center">상승</td><td class="center">140</td><td class="center">58</td><td class="center diff-cell"><span class="diff-up">▲ 141.4%</span></td></tr>
+      <tr class="hl"><td>폰지킴</td><td>★ 보호앱 설정 수</td><td class="center">상승</td><td class="center">0</td><td class="center">–</td><td class="center diff-cell"><span class="muted">측정 시작</span></td></tr>
+      <tr><td>폰지킴</td><td>앱 가입 수 (유료)</td><td class="center">–</td><td class="center">1,012</td><td class="center">964</td><td class="center diff-cell"><span class="diff-up">▲ 5.0%</span></td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="foot-note">목표 열의 「상승」은 N &gt; NN 수치 미정 · MAU 목표 대비 45.9% · DAU 일평균은 목표 하한(2만) 대비 22.9%</p>
+
+  <h3 class="sub-title">이번 주 해석</h3>
+  <table class="data">
+    <colgroup><col style="width:14%"><col></colgroup>
+    <tbody>
+      <tr><td><b>① 유입</b></td><td>DAU가 5천 안팎에 머물러 목표(2~4만)에 못 미칩니다. MAU는 30일 기준 기간이 이동(10.21~10.27 제외)하며 줄었습니다.</td></tr>
+      <tr class="hl"><td><b>② 전환 ★</b></td><td>주소록 백업 설정 완료가 58 → 140명으로 늘었습니다. 11.23부터 일 17~41명으로 오르고(이전 일 7~9명), 같은 날부터 주소록 동기화 수신(<code>contacts_sync_recv</code>)이 잡힙니다. 외부 가입 완료 후 주소록 동기화(SP9) 상용 반영 효과로 보입니다 [추정].</td></tr>
+      <tr><td><b>③ 폰지킴</b></td><td>앱 가입은 1,012건으로 안정적입니다. 목표인 보호앱 설정은 이벤트 추가 후 첫 주라 0건이며, 발생 위치 확인이 필요합니다.</td></tr>
+    </tbody>
+  </table>
+
+  <hr class="divider">
+
+  <h2 class="section-title">2. 안심클라우드 핵심 지표</h2>
+  <div class="goal-chip">목표 · 주간 주소록 백업 설정 완료 전환수 상승 (N &gt; NN)</div>
+  <div class="scroll">
+  <table class="data">
+    <colgroup><col style="width:8%"><col style="width:22%"><col style="width:10%"><col style="width:10%"><col style="width:11%"><col style="width:11%"><col></colgroup>
+    <thead><tr><th>구분</th><th>측정지표</th><th class="center">금주<br><span style="font-weight:400">11.20~11.26</span></th><th class="center">전주</th><th class="center">누적</th><th class="center">상태</th><th>비고 · 관련 업무</th></tr></thead>
+    <tbody>
+      <tr><td>유입</td><td>전체 MAU (최근 30일)</td><td class="center">275,158</td><td class="center">343,047</td><td class="center">–</td><td class="center"><span class="st warn">보정 필요</span></td><td>10.28~11.26 · 목표 60만 대비 45.9% · SP1·SP2</td></tr>
+      <tr><td>전환</td><td>파일 업로드 완료 수</td><td class="center">3,439</td><td class="center">3,519</td><td class="center">261,482</td><td class="center"><span class="st warn">보정 필요</span></td><td>시도 후 콜백 기준(성공 미포함) · <code>file_upload</code></td></tr>
+      <tr><td>전환</td><td>자동백업 설정 완료 수</td><td class="center">4</td><td class="center">6</td><td class="center">137</td><td class="center"><span class="st">정상</span></td><td><code>smart_backup_set</code></td></tr>
+      <tr class="hl"><td>전환</td><td>★ 주소록 백업 설정 완료 수 (목표)</td><td class="center">140</td><td class="center">58</td><td class="center">1,455</td><td class="center"><span class="st warn">보정 필요</span></td><td><code>pass_contacts_backup</code> · 11.23부터 증가 · 켬·끔 혼재 가능 · SP9</td></tr>
+      <tr><td>전환</td><td>분실 감지 백업 설정 완료 수</td><td class="center">0</td><td class="center">0</td><td class="center">1</td><td class="center"><span class="st warn">보정 필요</span></td><td><code>loss_backup_set</code> · 설정 고객 거의 없음</td></tr>
+      <tr><td>전환</td><td>통합 클라우드 연결 고객 수</td><td class="center">144</td><td class="center">163</td><td class="center">3,518</td><td class="center"><span class="st">정상</span></td><td><code>external_cloud_connect</code></td></tr>
+      <tr><td>전환</td><td>공유 완료 수</td><td class="center">127</td><td class="center">110</td><td class="center">7,459</td><td class="center"><span class="st warn">보정 필요</span></td><td><code>file_share_request</code> · 링크 생성 기준(수신 열람 미포함)</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="foot-note">GA4 총 사용자(이벤트 사용자) 기준 · 누적은 06.24~11.26 · MAU는 활성 사용자, 운영 호스트 필터 미적용 · 목표값(N &gt; NN) 미정</p>
+
+  <hr class="divider">
+
+  <h2 class="section-title">3. 휴대폰 분실 피해 방지(폰지킴) 핵심 지표</h2>
+  <div class="goal-chip">목표 · 주간 보호앱 설정 전환수 상승 (N &gt; NN)</div>
+  <div class="scroll">
+  <table class="data">
+    <colgroup><col style="width:8%"><col style="width:22%"><col style="width:10%"><col style="width:10%"><col style="width:11%"><col style="width:11%"><col></colgroup>
+    <thead><tr><th>구분</th><th>측정지표</th><th class="center">금주<br><span style="font-weight:400">11.20~11.26</span></th><th class="center">전주</th><th class="center">누적</th><th class="center">상태</th><th>비고 · 관련 업무</th></tr></thead>
+    <tbody>
+      <tr><td>전환</td><td>앱 다운로드 수</td><td class="center">–</td><td class="center">–</td><td class="center">–</td><td class="center"><span class="st warn">콘솔 확인</span></td><td>Google Play Console 통계에서 확인 (GA 등록 불필요)</td></tr>
+      <tr><td>전환</td><td>앱 가입 수</td><td class="center">1,012</td><td class="center">964</td><td class="center">2,909</td><td class="center"><span class="st">정상</span></td><td>유료 가입(어드민 LGU+) · SKT 12월 출시 예정</td></tr>
+      <tr class="hl"><td>전환</td><td>★ 보호앱 설정 수 (목표)</td><td class="center">0</td><td class="center">–</td><td class="center">–</td><td class="center"><span class="st warn">측정 시작</span></td><td><code>device_blockapp_alllock_click</code> · 이벤트 추가 후 11.26까지 0건</td></tr>
+      <tr><td>전환</td><td>가족 설정 수</td><td class="center">1</td><td class="center">0</td><td class="center">–</td><td class="center"><span class="st bad">확인 필요</span></td><td><code>family_invite_send</code> · 주간 1건으로 사실상 미집계</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="foot-note">LGU+ 10.29 오픈 · 앱 가입 수 누적은 11.03~11.26 · 앱 다운로드는 dev 계정 로그인 후 확인한 값을 입력합니다</p>
+
+  <hr class="divider">
+
+  <h2 class="section-title">4. 일별 추이</h2>
+  <div class="period-note">11.20(금) ~ 11.26(목) · 토·일 DAU는 GA 활성 사용자, 평일은 구글 시트 값</div>
+  <div class="scroll">
+  <table class="data">
+    <thead><tr><th>항목</th><th class="center">합계</th><th class="center">11.20<br>금</th><th class="center">11.21<br>토</th><th class="center">11.22<br>일</th><th class="center">11.23<br>월</th><th class="center">11.24<br>화</th><th class="center">11.25<br>수</th><th class="center">11.26<br>목</th></tr></thead>
+    <tbody>
+      <tr class="group"><td colspan="9">안심클라우드</td></tr>
+      <tr><td>DAU</td><td class="center">32,086</td><td class="center">4,637</td><td class="center">2,982</td><td class="center">2,974</td><td class="center">5,324</td><td class="center">5,379</td><td class="center">5,649</td><td class="center">5,141</td></tr>
+      <tr class="hl"><td>★ 주소록 백업 설정 완료</td><td class="center">140</td><td class="center">9</td><td class="center">7</td><td class="center">9</td><td class="center">17</td><td class="center">35</td><td class="center">41</td><td class="center">22</td></tr>
+      <tr><td>LGU+ 당일 유료가입</td><td class="center">4,228</td><td class="center">404</td><td class="center">503</td><td class="center">535</td><td class="center">776</td><td class="center">842</td><td class="center">576</td><td class="center">592</td></tr>
+      <tr><td>SKT 당일 유료가입</td><td class="center">4,371</td><td class="center">539</td><td class="center">681</td><td class="center">537</td><td class="center">655</td><td class="center">771</td><td class="center">596</td><td class="center">592</td></tr>
+      <tr class="group"><td colspan="9">폰지킴</td></tr>
+      <tr><td>앱 가입 (유료, LGU+)</td><td class="center">1,012</td><td class="center">105</td><td class="center">126</td><td class="center">142</td><td class="center">153</td><td class="center">201</td><td class="center">109</td><td class="center">176</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="foot-note">전주 대비 LGU+ 가입 4,146 → 4,228(+2.0%) · SKT 가입 5,900 → 4,371(-25.9%) · 유료 누적(11.26) LGU+ 30,614 · SKT 24,249 · 폰지킴 잔존 2,167</p>
+
+  <hr class="divider">
+
+  <h2 class="section-title">5. 측정 이슈 · 요청</h2>
+  <table class="data">
+    <colgroup><col style="width:30%"><col></colgroup>
+    <tbody>
+      <tr><td>폰지킴 앱 다운로드</td><td>Google Play Console 통계로 확인 → 계정 로그인 후 값 입력 필요</td></tr>
+      <tr><td>폰지킴 보호앱 설정 (목표)</td><td>이벤트 추가 후 0건 → 앱에서 설정 완료 시 발생하는지 개발 확인</td></tr>
+      <tr><td>폰지킴 가족 설정</td><td><code>family_invite_send</code> 주간 1건 → 0에 가까운 원인(GA 태그) 개발 확인</td></tr>
+      <tr><td>파일 업로드 완료 수</td><td>업로드 성공 여부 미포함 → 성공 분기 뒤로 이벤트 이동 개발 필요</td></tr>
+      <tr class="hl"><td>주소록 백업 설정 완료 수 (목표)</td><td>켬·끔 구분 정의 확정 필요 (on/off 파라미터 개발) · 11.23 이후 증가분의 경로(외부 가입 후 동기화) 구분 확인</td></tr>
+    </tbody>
+  </table>
+
+  <hr class="divider">
+
+  <h2 class="section-title">6. 업무 시간 배분</h2>
+  <div class="period-note">11.20(금) ~ 11.26(목) · 근무 5일(40시간) · 추정치</div>
+  <table class="data">
+    <thead><tr><th>구분</th><th class="center">시간</th><th class="center">비중</th></tr></thead>
+    <tbody>
+      <tr><td>서비스 개선 (스프린트)</td><td class="center">16시간</td><td class="center">40.0%</td></tr>
+      <tr><td>서비스 구축 (프로젝트)</td><td class="center">6시간</td><td class="center">15.0%</td></tr>
+      <tr><td>서비스 운영</td><td class="center">14시간</td><td class="center">35.0%</td></tr>
+      <tr><td>사내 업무</td><td class="center">4시간</td><td class="center">10.0%</td></tr>
+      <tr><td>합계</td><td class="center">40시간</td><td class="center">100%</td></tr>
+    </tbody>
+  </table>
+
+  <h2 class="section-title">7. 스프린트별 지난주 · 금주</h2>
+  <div class="period-note">지난주 = 11월 3주차(11.13~11.19) · 금주 = 11월 4주차(11.20~11.26) · 업무마다 JIRA 연결</div>
+  <div class="scroll">
+  <table class="data">
+    <colgroup><col style="width:22%"><col><col></colgroup>
+    <thead><tr><th>스프린트</th><th>지난주 업무</th><th>금주 업무 · 일정</th></tr></thead>
+    <tbody>
+      <tr><td><b>SP1</b> 오피스도우미 10월 배포<br><span class="muted" style="font-size:12px">유입 DAU 3,000 → 19,000</span></td><td>· 폴라리스 GA 요청 <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-1156" target="_blank">1156</a> · 11.20</td><td>· 폴라리스 GA 요청 <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-1156" target="_blank">1156</a> <span class="st done">완료</span></td></tr>
+      <tr><td><b>SP2</b> 오피스도우미 12월 배포<br><span class="muted" style="font-size:12px">유입 DAU 19,000 → 40,000</span></td><td>· 개인정보처리방침·고지 작성 <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-977" target="_blank">977</a> · 12.16<br>· 아톤 결함 대응 · 11.20</td><td>· 아톤 이슈 대응 <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-1211" target="_blank">1211</a> <span class="st done">완료</span> 11.20<br>· 개인정보처리방침·고지 작성 <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-977" target="_blank">977</a> · 12.16</td></tr>
+      <tr><td><b>SP3</b> 폴라리스 스마트 스캐너<br><span class="muted" style="font-size:12px">스캐너 이용자 전환</span></td><td>· 폴라리스 사전 미팅 <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-1075" target="_blank">1075</a> <span class="st done">완료</span> 11.19</td><td>· 3사 미팅 전 자료 업데이트 <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-1235" target="_blank">1235</a> <span class="st done">완료</span> 11.25<br>· 3사 미팅 <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-1275" target="_blank">1275</a> <span class="st done">완료</span> 11.27</td></tr>
+      <tr><td><b>SP5</b> 특약 보험(DB손해보험)<br><span class="muted" style="font-size:12px">데이터 소실 대비</span></td><td>· DB손해보험 계약 추진 <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-402" target="_blank">402</a> · 11.27</td><td>· DB손해보험 계약 추진 <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-402" target="_blank">402</a> · 12.09</td></tr>
+      <tr><td><b>SP7</b> LGU+ 개인정보 제3자 제공 동의 약관<br><span class="muted" style="font-size:12px">약관 일치 · 재동의 안내</span></td><td>· LGU+ MVNO 약관 <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-795" target="_blank">795</a> <span class="st done">완료</span> 11.18<br>· 폰지킴 약관 수정·반영 <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-1159" target="_blank">1159</a> · 12.02</td><td>· 폰지킴 약관 수정·반영 <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-1159" target="_blank">1159</a> · 12.02</td></tr>
+      <tr><td><b>SP9</b> 외부 가입 완료 후 주소록 동기화<br><span class="muted" style="font-size:12px">가입 흐름 완성 · 미사용 고객 활성화</span></td><td>· 검수 QA <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-1057" target="_blank">1057</a> <span class="st done">완료</span> 11.18<br>· 상용 배포·상용 QA <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-1056" target="_blank">1056</a> · 11.20</td><td>· 상용 QA <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-1056" target="_blank">1056</a> <span class="st done">완료</span> 11.23<br>· 외부가입 완료화면 개발 <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-1034" target="_blank">1034</a> <span class="st done">완료</span><br>· 미사용 고객 활성화(동기화 유도) <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-1054" target="_blank">1054</a> <span class="st done">완료</span> 11.25</td></tr>
+      <tr><td><b>방미통위</b> 통신사 자료 제출 대응<br><span class="muted" style="font-size:12px">약관·해지 관련 요구 대응</span></td><td>· 방미통위 자료 SKT <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-1163" target="_blank">1163</a> · LGU+ <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-1166" target="_blank">1166</a> · 11.23</td><td>· 자료 제출 SKT <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-1163" target="_blank">1163</a> · LGU+ <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-1166" target="_blank">1166</a> <span class="st done">완료</span> 11.23<br>· LGU+ 자료 수정 <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-1236" target="_blank">1236</a> <span class="st done">완료</span> 11.24<br>· 선택약관 빨간색 볼드 수정 LGU+ <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-1284" target="_blank">1284</a> · SKT <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-1285" target="_blank">1285</a> <span class="st done">완료</span> 11.26<br>· 가입창 선택약관 제목 표시 <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-1281" target="_blank">1281</a> <span class="st done">완료</span> 11.26<br>· 청약철회 대응 LGU+ <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-1286" target="_blank">1286</a> · SKT <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-1287" target="_blank">1287</a> · 11.27</td></tr>
+      <tr><td><b>GA</b> GA 세팅<br><span class="muted" style="font-size:12px">지표 측정 체계 확보</span></td><td>· 안심클라우드 <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-1133" target="_blank">1133</a> · 폰지킴 <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-1134" target="_blank">1134</a> · 미정</td><td>· 안심클라우드 <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-1133" target="_blank">1133</a> <span class="st done">완료</span> 11.26<br>· 폰지킴 <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-1134" target="_blank">1134</a> · 보호앱 설정 이벤트 추가 · 값 확인 대기</td></tr>
+      <tr><td><b>PRJ</b> 폰지킴 SKT 구축 (90%)<br><span class="muted" style="font-size:12px">12월 출시 예정</span></td><td><span class="muted">–</span></td><td>· SKT 접점공지 작성 <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-1274" target="_blank">1274</a> <span class="st done">완료</span> 11.26<br>· 빌레터 개인정보처리방침 작성·공유 <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-1253" target="_blank">1253</a> <span class="st done">완료</span> 11.25<br>· 빌레터 모아보기 기획 <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-1252" target="_blank">1252</a> · 12.11<br>· 서비스 오픈 대응 <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-339" target="_blank">339</a> · 12.11</td></tr>
+      <tr><td><b>운영</b> 서비스 운영<br><span class="muted" style="font-size:12px">통신사 요청 대응</span></td><td>· SKT PASS 이동 버튼 <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-869" target="_blank">869</a> <span class="st done">완료</span><br>· 월간 문자 발송 <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-1110" target="_blank">1110</a> <span class="st done">완료</span><br>· 유료가입자 현황 공유 <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-1116" target="_blank">1116</a><br>· 통신사 문의 대응</td><td>· 통신사 검수 요청(폰지킴) <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-1224" target="_blank">1224</a> <span class="st done">완료</span> 11.25<br>· SKT 외부가입 퍼널 분석 <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-1106" target="_blank">1106</a> <span class="st done">완료</span><br>· LGU 가입완료 팝업 문구 수정 <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-1245" target="_blank">1245</a> <span class="st done">완료</span> 11.24<br>· 외부가입 문자 발송 서버 점검 <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-968" target="_blank">968</a> <span class="st done">완료</span> 11.20<br>· 유료가입자 현황 공유 <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-1116" target="_blank">1116</a> · 11.30<br>· 광고게재신청서 작성·송부 <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-1277" target="_blank">1277</a><br>· 안심클라우드 시퀀스 다이어그램 <a href="https://oceanbleu-no1.atlassian.net/browse/OCEANALL-1119" target="_blank">1119</a> · 12.11</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p class="foot-note">일일 업무 기록은 구글 시트 「일일 업무 보고_최경진」 11/16~11/20 · 11/23~11/27 주 탭에서 볼 수 있습니다. 목표 일정은 JIRA 기한 기준입니다.</p>
+</div>
+</body>
+</html>
